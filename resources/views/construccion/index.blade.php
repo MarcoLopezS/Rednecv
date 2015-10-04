@@ -56,12 +56,12 @@
                             <span class="countdown_help">{sl}</span>
                         </div>
                     </div>
-                    <!-- END COUNTDOWN -->
+                    <!-- END COUNTDOWN 
 
                     <div class="section clearfix animated fadeIn" id="contact">
                         <a href="#"><i class="fa fa-envelope-o"></i> email@ycompany.com</a>
                         <a href="#"><i class="fa fa-phone"></i> (+00) 123 4567</a>
-                    </div>
+                    </div>-->
 
 
                     <div class="section clearfix">
