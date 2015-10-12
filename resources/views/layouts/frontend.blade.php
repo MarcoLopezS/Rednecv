@@ -8,7 +8,7 @@
 <meta name="description" content="Place your description here">
 
 {{-- Estilos --}}
-{!! HTML::style('css/style.css') !!}
+{!! HTML::style('css/estilos.css') !!}
 {!! HTML::style('css/update-responsive.css') !!}
 
 {{-- Slider --}}
