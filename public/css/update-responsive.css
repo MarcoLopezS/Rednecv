@@ -1,0 +1,231 @@
+/******************************************************RESPONSIVE 480 START******************************************************/
+@media (max-width: 480px) {
+.wrapper .flexslider .slides li.slide-image .caption {
+	width: 90%;
+	left: 20px;
+	bottom: 6px;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+#banner .flex-control-nav {
+	display: none;
+}
+.wrapper .flexslider .slides li.slide-image .caption {
+	display: block;
+}
+#nav {
+	float: left;
+	width: 100%;
+}
+.help-holder .bottom .left {
+	max-width: 100%;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.d-btn, .sub-btn {
+	float: none;
+	display: table;
+	margin: 0 auto;
+}
+#content-holder2, .content-holder1, #footer, .f-icons {
+	text-align: center;
+}
+.h-blog img {
+	margin: 0 0 20px 0;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.gallery-list {
+	margin: 0 0 20px 0;
+}
+.author-img {
+	margin: 0;
+}
+.f-icons li {
+	float: none;
+	display: inline-block;
+}
+#banner .flexslider .slides img, #banner .flexslider .slides > li {
+	height: auto;
+}
+#banner {
+	float: left;
+	width: 100%;
+	top: 0;
+	margin: 0;
+}
+.error-field {
+	width: 100%;
+	height: 30px !important;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.author-art .title {
+	height: 100px;
+}
+.tbs li a {
+	font-size: 12px;
+	padding: 4px 7px;
+}
+.author-inner img {
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.team-img {
+	margin: 0 0 10px 0;
+}
+.title2 {
+	font-size: 20px;
+}
+.gallery-list {
+	display: block;
+	text-align: center;
+}
+.gallery-list li {
+	float: none;
+	margin: 0;
+	display: inline-block;
+}
+.map-border, .content-img {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.wrapper .accordion-heading .accordion-toggle {
+	font-size: 14px;
+}
+.the-icons li, .t-author {
+	float: none;
+}
+}
+/******************************************************RESPONSIVE 480 END******************************************************/
+
+/******************************************************RESPONSIVE 767 START******************************************************/
+@media (max-width: 767px) {
+#banner .flexslider .slides li.slide-image .caption {
+	display: block;
+}
+.help-holder .bottom, #content-holder2, .content-holder1, #footer, .f-icons {
+	text-align: center;
+}
+.help-holder .bottom .left {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+.d-btn {
+	float: none;
+	display: table;
+	margin: 0 auto;
+}
+.gallery-list {
+	margin: 0 0 20px 0;
+	width: 100%;
+}
+.wrapper .send-btn {
+	width: 100%;
+	padding: 5px 0;
+}
+.f-field, #comments {
+	width: 100%;
+	min-width: 100%;
+}
+.f-icons li {
+	float: none;
+	display: inline-block;
+}
+#banner {
+	float: left;
+	width: 100%;
+	top: 0;
+	margin: 0;
+}
+.flexslider .slides img {
+	height: auto;
+}
+.error-field {
+	width: 100%;
+	height: 30px !important;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.content-img {
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+.author-art .title {
+	height: 80px;
+}
+.tbs {
+	left: 0;
+	right: 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+.tbs li {
+	float: none;
+	display: inline-block;
+}
+.comm-field {
+	width: 100%;
+	height: 30px !important;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.comm-area {
+	min-width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.map-border, .content-img {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.the-icons li {
+	float: none;
+}
+}
+/******************************************************RESPONSIVE 767 END******************************************************/
+
+/******************************************************RESPONSIVE 768 AND 979 START******************************************************/
+@media (min-width: 768px) and (max-width: 979px) {
+.wrapper .flexslider .slides li.slide-image .caption {
+	display: block;
+}
+#banner .flex-direction-nav {
+	right: 8%;
+}
+.more-btn {
+	float: left;
+	margin-bottom: 10px;
+}
+#content-holder2 h2, .content-holder1 h2 {
+	font-size: 27px;
+}
+.author-img {
+	margin: 0 0 10px 0;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+#banner {
+	float: left;
+	width: 100%;
+	top: 0;
+	margin: 0;
+}
+}
+/******************************************************RESPONSIVE 768 AND 979 END******************************************************/

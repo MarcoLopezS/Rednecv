@@ -1,0 +1,57 @@
+.inner-f-top,
+#footer,
+#content-holder2{background:url(../../images/content-bg2-5.jpg);}
+
+.inner-pages h2 .txt-left,
+.content-holder1 h2{color: #27201c;}
+
+.service-tabs h3, .txt-color, .art-link a, .art-link, .art-bottom, .num-post, .status, .cat-title, .b-top-links li, a:hover, a:focus, .s-holder a,
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus, .t-author, #home .more-btn2{color: #691257;}
+
+.author-img-holder .author-name{color:#b5399b;} 
+
+.copy-right p a{ color:#fff;}
+
+.more-btn{color:#fff; border-top:2px solid #b5399b;}
+
+.more-btn2{color:#fff; border-top:2px solid #691257}
+#home .more-btn2:hover{color:#1d0a14;}
+.more-btn1{background:#7b1266;}
+.more-btn:hover, .more-btn2:hover{color:#691257;}
+
+.date a:hover{color:#003569;}
+
+.h-blog .title {color:#003569;}
+.h-blog .title a, .more-btn1:hover{color:#fff;}
+
+.sub-btn, .send-btn{background:#38002d;}
+.sub-btn:hover, .send-btn:hover{background:#691257;}
+
+.f-icons li{background:url(../../images/social-links-purple.png) no-repeat bottom;}
+
+#content-holder2 p{color:#fff;}
+
+.navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a:hover,
+.navbar-inverse .nav .active > a:focus,
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a,
+.d-btn,
+.flex-control-nav li a.active,
+.author-art .title, .career-list,
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus, .accordion-heading, .left-col-list li a:hover{background-color: #3b0032;}
+
+blockquote, .flexslider .slides li.slide-image .caption{ border-color:#3b0032;}
+
+.d-btn:hover{ background:#7b1266;}
+
+#logo {background:url(../../images/logo-purple.jpg) no-repeat;}
+.elastislide-horizontal ul li {background:url(../../images/img-bottom-1.png) repeat-x bottom;}
+.contact-list li{background:url(../../images/contact-icon-purple.png) no-repeat;}
