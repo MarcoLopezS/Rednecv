@@ -1,505 +1,264 @@
-<!DOCTYPE html>
+@extends('layouts.frontend')
 
-<html lang="en">
+@section('contenido_body')
 
-<head>
+<!-- banner -->
+<section id="banner" class="inner-b"> <img src="images/404_01.png" alt=""/> </section>
 
-<title>Blog Detail</title>
+<!-- Content -->
+<section class="content-holder1 inner-pages">
 
-<meta name="description" content="Place your description here">
+	<section class="container">
 
-<meta charset="utf-8">
+		<section class="help-holder">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<article class="left">
 
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/update-responsive.css" type="text/css">
+				<h2> <span class="txt-left">Blog</span> <span class="bg-right"></span> </h2>
 
-<!-- Slider -->
+					<section class="row-fluid content-holder">
 
-<link rel="stylesheet" href="css/flexslid.css" type="text/css" media="screen">
+						<figure class="span8">
 
-<!-- bootstrap css -->
+							<article class="author-art">
 
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+								<div class="author-inner"><img src="images/image19.jpg" class="team-img" alt=""/><strong class="title2"><a href="#">Sed eu nibh et eros lacinia </a></strong>
 
-<!-- cerousel css -->
+									<p>Nam sed nibh tellus, eu tempor metus. Donec ornare elit ac lectus molestie lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc lorem orci, suscipit quis congue eget, euismod in enim. Suspendisse pulvinar pretium eleifend. Duis venenatis eros id libero imperdiet consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra orci eget velit vulputate</p>
 
-<link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
 
-<!-- Style Switcher Box -->
+								</div>
 
-<link rel="stylesheet" href="css/switcher.css">
+							</article>
 
-<!-- skins -->
+							<h2>Leave a Comment</h2>
 
-<link rel="stylesheet" name="skins" href="css/default.css" type="text/css" media="all">
+					<ul class="comm-list">
 
-<!--[if lt IE 7]>
+						<li>
 
-            <script type="text/javascript" src="js/ie6_script_other.js"></script>
+								<label>Your Name...</label>
 
-        <![endif]-->
+								<input name="" type="text" class="comm-field">
 
-<!--[if lt IE 9]>
+							</li>
 
-            <script type="text/javascript" src="js/html5.js"></script>
+							<li>
 
-        <![endif]-->
+								<label>Your Email...</label>
 
-<!-- jquery -->
+								<input name="" type="text" class="comm-field">
 
-</head>
+							</li>
 
-<body>
+							<li>
 
-<div class="wrapper"> 
+								<label>Comment</label>
 
-  <!-- header -->
+								<textarea name="" cols="4" rows="20" class="comm-area"></textarea>
 
-  <header id="header">
+							</li>
 
-    <section class="container">
+							<li><input name="" type="submit" class="send-btn" value="Submit"></li>
 
-      <h1 id="logo"><a href="index.html">Green Peas</a></h1>
+					</ul>
 
-      <nav id="nav">
+							
 
-        <div class="navbar navbar-inverse">
+						</figure>
 
-          <div class="navbar-inner">
+						<figure class="span4">
 
-            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+				<div class="right-holder">
 
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+							<div class="right-holder">
 
-            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+						<h3>Categories</h3>
 
-            <div class="nav-collapse collapse">
+							<ul class="archives">
 
-              <ul class="nav">
+								<li><a href="#">Art Design</a> <span class="num-post">22</span></li>
 
-                <li> <a href="index.html">Home</a> </li>
+									<li><a href="#">Graphic Design</a> <span class="num-post">22</span></li>
 
-                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Company <b class="caret"></b> </a>
+									<li><a href="#">Web Design</a> <span class="num-post">22</span></li>
 
-                  <ul class="dropdown-menu">
+									<li><a href="#">Development</a> <span class="num-post">22</span></li>
 
-                  	<li><a href="about-us.html">About Us</a></li>
+									<li><a href="#">Jquery</a> <span class="num-post">22</span></li> 
 
-                    <li><a href="career.html">Career</a></li>
+							</ul>
 
-          	    	<li><a href="team.html">Our Team</a></li>
+					</div>
 
-                	<li><a href="author.html">author</a></li>
+					</div>
 
-                  </ul>
+				<div class="right-holder">
 
-                </li>
+					<h3>Recent Comments</h3>
 
-                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Gallery <b class="caret"></b> </a>
+						<ul class="comments">
 
-                  <ul class="dropdown-menu">
+								<li>
 
-                  	<li><a href="gallery-2col.html">Gallery 2 column</a></li>
+										<img src="images/image37.jpg" class="team-img" alt=""/>
 
-          	    	<li><a href="gallery-3col.html">Gallery 3 column</a></li>
+										<a href="#" class="author-name">John says</a>
 
-                	<li><a href="gallery-4col.html">Gallery 4 column</a></li>
+										<p>Vestibulum facilisis tempor ultricies. Nulla facilisi. Peuismod lacinia. <a href="#">read more</a> </p>
 
-                	<li><a href="right-bar-gallery.html">Right Bar Gallery</a></li>
+								</li>
 
-                  </ul>
+								<li>
 
-                </li>
+										<img src="images/image38.jpg" class="team-img" alt=""/>
 
-                <li class="dropdown active"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog <b class="caret"></b> </a>
+										<a href="#" class="author-name">John says</a>
 
-                  <ul class="dropdown-menu">
+										<p>Vestibulum facilisis tempor ultricies. Nulla facilisi. Peuismod lacinia. <a href="#">read more</a> </p>
 
-                  	<li><a href="blog.html">Blog</a></li>
+								</li>
 
-          	    	<li class="active"><a href="blog-detail.html">Blog Detail</a></li>
+								<li>
 
-                	<li><a href="blog-double-sidebar.html">Blog Double Sidebar</a></li>
+										<img src="images/image39.jpg" class="team-img" alt=""/>
 
-                  </ul>
+										<a href="#" class="author-name">John says</a>
 
-                </li>
+										<p>Vestibulum facilisis tempor ultricies. Nulla facilisi. Peuismod lacinia. <a href="#">read more</a> </p>
 
-                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Features <b class="caret"></b> </a>
+								</li>
 
-                  <ul class="dropdown-menu">
+						</ul>
 
-                  	<li><a href="password_protected.html">Password Protected</a></li>
+					</div>
 
-          	    	<li><a href="password_protected2.html">password protected 2</a></li>
+					<div class="right-holder">
 
-                	<li><a href="search-result.html">Search Result</a></li>
+						<h3>FROM OUR GALLERY</h3>
 
-                    <li><a href="shotcodes.html">ShortCodes</a></li>
+							<ul class="gallery-list side-gallery">
 
-                    <li><a href="404.html">404 Page</a></li>
+										<li><a href="#"><img src="images/image42.jpg" alt=""/></a></li>
 
-                    <li><a href="faq.html">faq</a></li>
+											<li><a href="#"><img src="images/image43.jpg" alt=""/></a></li>
 
-                    <li><a href="left-nav.html">Left Nav</a></li>
+											<li><a href="#"><img src="images/image44.jpg" alt=""/></a></li>
 
-                    <li><a href="testimonials.html">Testimonials</a></li>
+											<li><a href="#"><img src="images/image45.jpg" alt=""/></a></li>
 
-                  </ul>
+											<li><a href="#"><img src="images/image46.jpg" alt=""/></a></li>
 
-                </li>
+											<li><a href="#"><img src="images/image47.jpg" alt=""/></a></li>
 
-                <li> <a href="contact.html">Contact</a> </li>
+											<li><a href="#"><img src="images/image48.jpg" alt=""/></a></li>
 
-              </ul>
+											<li><a href="#"><img src="images/image42.jpg" alt=""/></a></li>
 
-            </div>
+											<li><a href="#"><img src="images/image43.jpg" alt=""/></a></li>
 
-            <!--/.nav-collapse -->
+											<li><a href="#"><img src="images/image44.jpg" alt=""/></a></li>
 
-          </div>
+											<li><a href="#"><img src="images/image45.jpg" alt=""/></a></li>
 
-          <!-- /.navbar-inner -->
+											<li><a href="#"><img src="images/image46.jpg" alt=""/></a></li>
 
-        </div>
+									</ul>
 
-        <!-- /.navbar -->
+					</div>
 
-      </nav>
+			</figure>
 
-    </section>
+					</section>
 
-  </header>
+			</article>
 
-  <!-- banner -->
+		</section>
 
-  <section id="banner" class="inner-b"> <img src="images/404_01.png" alt=""/> </section>
+	</section>
 
-  <!-- Content -->
+</section>
 
-  <section class="content-holder1 inner-pages">
+<section class="inner-f-top">
 
-    <section class="container">
+	<section class="container">
 
-      <section class="help-holder">
+		<section class="top">
 
-        <article class="left">
+			<section class="row-fluid">
 
-          <h2> <span class="txt-left">Blog</span> <span class="bg-right"></span> </h2>
+				<figure class="span3">
 
-<section class="row-fluid content-holder">
+					<h2>From The Gallery</h2>
 
-              <figure class="span8">
+					<ul class="gallery-list">
 
-                <article class="author-art">
+						<li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
 
-                  <div class="author-inner"><img src="images/image19.jpg" class="team-img" alt=""/><strong class="title2"><a href="#">Sed eu nibh et eros lacinia </a></strong>
+						<li> <a href="#"> <img src="images/image12.jpg" alt=""/> </a> </li>
 
-                    <p>Nam sed nibh tellus, eu tempor metus. Donec ornare elit ac lectus molestie lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc lorem orci, suscipit quis congue eget, euismod in enim. Suspendisse pulvinar pretium eleifend. Duis venenatis eros id libero imperdiet consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra orci eget velit vulputate</p>
+						<li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
 
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+						<li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
 
-                  </div>
+						<li> <a href="#"> <img src="images/image14.jpg" alt=""/> </a> </li>
 
-                </article>
+						<li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
 
-                <h2>Leave a Comment</h2>
+						<li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
 
-            <ul class="comm-list">
+						<li> <a href="#"> <img src="images/image16.jpg" alt=""/> </a> </li>
 
-            	<li>
+						<li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
 
-                	<label>Your Name...</label>
+					</ul>
 
-                	<input name="" type="text" class="comm-field">
+					<a href="#" class="more-btn2">+ View More</a> </figure>
 
-                </li>
+				<figure class="span3">
 
-                <li>
+					<h2>Our Team</h2>
 
-                	<label>Your Email...</label>
+					<div class="author-img-holder"> <a href="#"> <img src="images/image17.jpg" class="author-img" alt=""/> </a> <strong class="author-name">John Orange</strong> <em>CEO</em> <span>37 years old</span> </div>
 
-                	<input name="" type="text" class="comm-field">
+					<p>Pellentesque euismod egestas massa, ac vehicula nunc tristique quis. Donec sollicitudin, diam eu vestibulum adipiimperdiet ultricies. <br>
 
-                </li>
+						Dignissim, ante sit amet imperdiet ultricies, felis enim luctus leo, et cursus leo libero in nisi. Donec sit amet ipsum velit, a faucibus purus.</p>
 
-                <li>
+				</figure>
 
-                	<label>Comment</label>
+				<figure class="span3 b-post">
 
-                	<textarea name="" cols="4" rows="20" class="comm-area"></textarea>
+					<h2>Latest Blog Post</h2>
 
-                </li>
+					<div class="f-img-holder"> <a href="#"> <img src="images/image18.jpg" class="f-blog-img" alt=""/> </a> <span class="p-date">22 <br>
 
-                <li><input name="" type="submit" class="send-btn" value="Submit"></li>
+						May</span> </div>
 
-            </ul>
+					<p>Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.</p>
 
-                
+					<a href="#" class="more-btn2">+ Read More</a> </figure>
 
-              </figure>
+				<figure class="span3">
 
-              <figure class="span4">
+					<h2>Contact Us</h2>
 
-        	<div class="right-holder">
+					<form action="form.php" method="post">
+						<input name="name" id="name" type="text" class="f-field" value="Name">
+						<input name="email" id="email" type="text" class="f-field" value="Email">
+						<textarea name="comments" id="comments" cols="4" rows="20" class="f-area">Message</textarea>
+						<input name="" type="submit" class="send-btn" value="Send">
+					</form>
 
-                <div class="right-holder">
+				</figure>
 
-            	<h3>Categories</h3>
+			</section>
 
-                <ul class="archives">
+		</section>
 
-                	<li><a href="#">Art Design</a> <span class="num-post">22</span></li>
+	</section>
 
-                    <li><a href="#">Graphic Design</a> <span class="num-post">22</span></li>
+</section>
 
-                    <li><a href="#">Web Design</a> <span class="num-post">22</span></li>
-
-                    <li><a href="#">Development</a> <span class="num-post">22</span></li>
-
-                    <li><a href="#">Jquery</a> <span class="num-post">22</span></li> 
-
-                </ul>
-
-            </div>
-
-            </div>
-
-          <div class="right-holder">
-
-           	<h3>Recent Comments</h3>
-
-              <ul class="comments">
-
-               	  <li>
-
-                   	  <img src="images/image37.jpg" class="team-img" alt=""/>
-
-                      <a href="#" class="author-name">John says</a>
-
-                      <p>Vestibulum facilisis tempor ultricies. Nulla facilisi. Peuismod lacinia. <a href="#">read more</a> </p>
-
-                  </li>
-
-                  <li>
-
-                   	  <img src="images/image38.jpg" class="team-img" alt=""/>
-
-                      <a href="#" class="author-name">John says</a>
-
-                      <p>Vestibulum facilisis tempor ultricies. Nulla facilisi. Peuismod lacinia. <a href="#">read more</a> </p>
-
-                  </li>
-
-                  <li>
-
-                   	  <img src="images/image39.jpg" class="team-img" alt=""/>
-
-                      <a href="#" class="author-name">John says</a>
-
-                      <p>Vestibulum facilisis tempor ultricies. Nulla facilisi. Peuismod lacinia. <a href="#">read more</a> </p>
-
-                  </li>
-
-              </ul>
-
-            </div>
-
-            <div class="right-holder">
-
-            	<h3>FROM OUR GALLERY</h3>
-
-                <ul class="gallery-list side-gallery">
-
-                    	<li><a href="#"><img src="images/image42.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image43.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image44.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image45.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image46.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image47.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image48.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image42.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image43.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image44.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image45.jpg" alt=""/></a></li>
-
-                        <li><a href="#"><img src="images/image46.jpg" alt=""/></a></li>
-
-                    </ul>
-
-            </div>
-
-        </figure>
-
-            </section>
-
-        </article>
-
-      </section>
-
-    </section>
-
-  </section>
-
-  <section class="inner-f-top">
-
-    <section class="container">
-
-      <section class="top">
-
-        <section class="row-fluid">
-
-          <figure class="span3">
-
-            <h2>From The Gallery</h2>
-
-            <ul class="gallery-list">
-
-              <li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image12.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image14.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image16.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
-
-            </ul>
-
-            <a href="#" class="more-btn2">+ View More</a> </figure>
-
-          <figure class="span3">
-
-            <h2>Our Team</h2>
-
-            <div class="author-img-holder"> <a href="#"> <img src="images/image17.jpg" class="author-img" alt=""/> </a> <strong class="author-name">John Orange</strong> <em>CEO</em> <span>37 years old</span> </div>
-
-            <p>Pellentesque euismod egestas massa, ac vehicula nunc tristique quis. Donec sollicitudin, diam eu vestibulum adipiimperdiet ultricies. <br>
-
-              Dignissim, ante sit amet imperdiet ultricies, felis enim luctus leo, et cursus leo libero in nisi. Donec sit amet ipsum velit, a faucibus purus.</p>
-
-          </figure>
-
-          <figure class="span3 b-post">
-
-            <h2>Latest Blog Post</h2>
-
-            <div class="f-img-holder"> <a href="#"> <img src="images/image18.jpg" class="f-blog-img" alt=""/> </a> <span class="p-date">22 <br>
-
-              May</span> </div>
-
-            <p>Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.</p>
-
-            <a href="#" class="more-btn2">+ Read More</a> </figure>
-
-          <figure class="span3">
-
-            <h2>Contact Us</h2>
-
-            <form action="form.php" method="post">
-              <input name="name" id="name" type="text" class="f-field" value="Name">
-              <input name="email" id="email" type="text" class="f-field" value="Email">
-              <textarea name="comments" id="comments" cols="4" rows="20" class="f-area">Message</textarea>
-              <input name="" type="submit" class="send-btn" value="Send">
-            </form>
-
-          </figure>
-
-        </section>
-
-      </section>
-
-    </section>
-
-  </section>
-
-  <!-- footer -->
-
-  <footer id="footer">
-
-    <section class="container">
-
-      <figure class="copy-right">
-
-        <p>Copyright © 2012. All rights reserved. Designed by <a href="http://crunchpress.com/">CrunchPress.com</a></p>
-
-      </figure>
-
-      <ul class="f-icons">
-
-        <li class="fb"><a href="#">Facebook</a> </li>
-
-        <li class="flicker"><a href="#">Flicker</a> </li>
-
-        <li class="tweeter"><a href="#">Tweeter</a> </li>
-
-        <li class="skype"><a href="#">Skype</a> </li>
-
-        <li class="linkdin"><a href="#">LinkdIn</a> </li>
-
-      </ul>
-
-    </section>
-
-  </footer>
-
-</div>
-
-<div class="switcher"></div>
-
-<!-- lab -->
-
-<script type="text/javascript" src="js/jquery00.js"></script>
-
-<script src="js/modernizr.custom.17475.js"></script>
-
-<!-- clear input -->
-
-<script type="text/javascript" src="js/focus.js"></script>
-
-<!-- bootstrap -->
-
-<script type="text/javascript" src="js/bootstrap.js"></script>
-
-<!-- Cerousel -->
-
-<script type="text/javascript" src="js/jquery.elastislide.js"></script>
-
-<script type="text/javascript">
-
-$( '#carousel' ).elastislide();
-
-</script>
-
-<!-- FlexiSlider -->
-
-<script type="text/javascript" src="js/slider.js"></script>
-
-<script src="js/cockies.js"></script> <!-- jQuery cookie --> 
-
-<script src="js/styleswi.js"></script> <!-- Style Switcher --> 
-
-</body>
-
-</html>
+@stop

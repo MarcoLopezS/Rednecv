@@ -34,7 +34,7 @@
 <!-- jquery -->
 </head>
 
-<body id="home">
+<body>
 	<div class="wrapper">
 
 		<!-- header -->
@@ -51,10 +51,10 @@
 							<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
 							<div class="nav-collapse collapse">
 								<ul class="nav">
-									<li class="active"><a href="index.html">Home</a></li>
+									<li class="active"><a href="/">Home</a></li>
 									<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Company <b class="caret"></b></a>
 										<ul class="dropdown-menu">
-											<li><a href="about-us.html">About Us</a></li>
+											<li><a href="about">About Us</a></li>
 											<li><a href="career.html">Career</a></li>
 										<li><a href="team.html">Our Team</a></li>
 										<li><a href="author.html">author</a></li>

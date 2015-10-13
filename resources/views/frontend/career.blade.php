@@ -1,421 +1,182 @@
-<!DOCTYPE html>
+@extends('layouts.frontend')
 
-<html lang="en">
+@section('contenido_body')
 
-<head>
+<!-- banner -->
 
-<title>Career</title>
+<section id="banner" class="inner-b"> <img src="images/404_01.png" alt=""/> </section>
 
-<meta name="description" content="Place your description here">
+<!-- Content -->
 
-<meta charset="utf-8">
+<section class="content-holder1 inner-pages">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<section class="container">
 
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/update-responsive.css" type="text/css">
+		<section class="help-holder">
 
-<!-- Slider -->
+			<article class="left">
 
-<link rel="stylesheet" href="css/flexslid.css" type="text/css" media="screen">
+				<h2> <span class="txt-left">Career</span> <span class="bg-right"></span> </h2>
 
-<!-- bootstrap css -->
+					<section class="row-fluid">
 
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+						<figure class="span3">
 
-<!-- cerousel css -->
+							 <h3>All Positions</h3>
 
-<link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+						<ul class="left-col-list">
 
-<!-- Style Switcher Box -->
+							<li><a href="#">Lorem Ipsum Dolor Sit</a> </li>
 
-<link rel="stylesheet" href="css/switcher.css">
+							<li><a href="#">Nunc Ut Pulvinar</a> </li>
 
-<!-- skins -->
+							<li><a href="#">Phasellus Mattis</a> </li>
 
-<link rel="stylesheet" name="skins" href="css/default.css" type="text/css" media="all">
+							<li><a href="#">Sed Rhoncus Justo</a> </li>
 
-<!--[if lt IE 7]>
+							<li><a href="#">Aliquam Erat Volutpat</a></li>
 
-            <script type="text/javascript" src="js/ie6_script_other.js"></script>
+							<li><a href="#">Donec Ac Purus</a> </li>
 
-        <![endif]-->
+						</ul>
 
-<!--[if lt IE 9]>
+						</figure>
 
-            <script type="text/javascript" src="js/html5.js"></script>
+						<figure class="span9">
 
-        <![endif]-->
+							<h3>Creative Head </h3>
 
-<!-- jquery -->
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id augue eget mauris sollicitudin malesuada. Nulla facilisi. Nam eleifend facilisis dui at cursus. Nunc lorem sapien, auctor a vestibulum nec, viverra a orci. Vestibulum fringilla lectus et enim ultricies eu ultrices ligula scelerisque. </p>
 
-</head>
+						<ul class="career-list">
 
-<body>
+							<li> <strong>Date Posted</strong> <span>12/06/2012</span> </li>
 
-<div class="wrapper"> 
+							<li> <strong>Job Code</strong> <span>CHGD2012</span> </li>
 
-  <!-- header -->
+							<li> <strong>City</strong> <span>New York</span> </li>
 
-  <header id="header">
+							<li> <strong>Country</strong> <span>United States of America</span> </li>
 
-    <section class="container">
+							<li> <strong>Job Type</strong> <span>Full Time</span> </li>
 
-      <h1 id="logo"><a href="index.html">Green Peas</a></h1>
+						</ul>
 
-      <nav id="nav">
+						<h3>Description</h3>
 
-        <div class="navbar navbar-inverse">
+						<p>Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. Ut adipiscing, leo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. Ut adipiscing, leo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. </p>
 
-          <div class="navbar-inner">
+						<h3>Minimum Requirements </h3>
 
-            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+						<ul class="services-list width-f">
 
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+							<li>Vivamus euismod eleifend ipsum sit amet molestie</li>
 
-            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+							<li>Pellentesque eget turpis ac leo vehicula consectetur</li>
 
-            <div class="nav-collapse collapse">
+							<li>Fusce tortor turpis, consectetur non laoreet a</li>
 
-              <ul class="nav">
+							<li>Vivamus euismod eleifend ipsum sit amet molestie</li>
 
-                <li> <a href="index.html">Home</a> </li>
+							<li>Pellentesque eget turpis ac leo vehicula consectetur</li>
 
-                <li class="dropdown active"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Company <b class="caret"></b> </a>
+							<li>Fusce tortor turpis, consectetur non laoreet a</li>
 
-                  <ul class="dropdown-menu">
+						</ul>
 
-                  	<li><a href="about-us.html">About Us</a></li>
+						<a class="more-btn1" href="#">Apply Now</a>
 
-                    <li class="active"><a href="career.html">Career</a></li>
+						</figure>
 
-          	    	<li><a href="team.html">Our Team</a></li>
+					</section>
 
-                	<li><a href="author.html">author</a></li>
+			</article>
 
-                  </ul>
+		</section>
 
-                </li>
+	</section>
 
-                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Gallery <b class="caret"></b> </a>
+</section>
 
-                  <ul class="dropdown-menu">
+<section class="inner-f-top">
 
-                  	<li><a href="gallery-2col.html">Gallery 2 column</a></li>
+	<section class="container">
 
-          	    	<li><a href="gallery-3col.html">Gallery 3 column</a></li>
+		<section class="top">
 
-                	<li><a href="gallery-4col.html">Gallery 4 column</a></li>
+			<section class="row-fluid">
 
-                	<li><a href="right-bar-gallery.html">Right Bar Gallery</a></li>
+				<figure class="span3">
 
-                  </ul>
+					<h2>From The Gallery</h2>
 
-                </li>
+					<ul class="gallery-list">
 
-                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog <b class="caret"></b> </a>
+						<li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
 
-                  <ul class="dropdown-menu">
+						<li> <a href="#"> <img src="images/image12.jpg" alt=""/> </a> </li>
 
-                  	<li><a href="blog.html">Blog</a></li>
+						<li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
 
-          	    	<li><a href="blog-detail.html">Blog Detail</a></li>
+						<li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
 
-                	<li><a href="blog-double-sidebar.html">Blog Double Sidebar</a></li>
+						<li> <a href="#"> <img src="images/image14.jpg" alt=""/> </a> </li>
 
-                  </ul>
+						<li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
 
-                </li>
+						<li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
 
-                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Features <b class="caret"></b> </a>
+						<li> <a href="#"> <img src="images/image16.jpg" alt=""/> </a> </li>
 
-                  <ul class="dropdown-menu">
+						<li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
 
-                  	<li><a href="password_protected.html">Password Protected</a></li>
+					</ul>
 
-          	    	<li><a href="password_protected2.html">password protected 2</a></li>
+					<a href="#" class="more-btn2">+ View More</a> </figure>
 
-                	<li><a href="search-result.html">Search Result</a></li>
+				<figure class="span3">
 
-                    <li><a href="shotcodes.html">ShortCodes</a></li>
+					<h2>Our Team</h2>
 
-                    <li><a href="404.html">404 Page</a></li>
+					<div class="author-img-holder"> <a href="#"> <img src="images/image17.jpg" class="author-img" alt=""/> </a> <strong class="author-name">John Orange</strong> <em>CEO</em> <span>37 years old</span> </div>
 
-                    <li><a href="faq.html">faq</a></li>
+					<p>Pellentesque euismod egestas massa, ac vehicula nunc tristique quis. Donec sollicitudin, diam eu vestibulum adipiimperdiet ultricies. <br>
 
-                    <li><a href="left-nav.html">Left Nav</a></li>
+						Dignissim, ante sit amet imperdiet ultricies, felis enim luctus leo, et cursus leo libero in nisi. Donec sit amet ipsum velit, a faucibus purus.</p>
 
-                    <li><a href="testimonials.html">Testimonials</a></li>
+				</figure>
 
-                  </ul>
+				<figure class="span3 b-post">
 
-                </li>
+					<h2>Latest Blog Post</h2>
 
-                <li> <a href="contact.html">Contact</a> </li>
+					<div class="f-img-holder"> <a href="#"> <img src="images/image18.jpg" class="f-blog-img" alt=""/> </a> <span class="p-date">22 <br>
 
-              </ul>
+						May</span> </div>
 
-            </div>
+					<p>Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.</p>
 
-            <!--/.nav-collapse -->
+					<a href="#" class="more-btn2">+ Read More</a> </figure>
 
-          </div>
+				<figure class="span3">
 
-          <!-- /.navbar-inner -->
+					<h2>Contact Us</h2>
 
-        </div>
+					<form action="form.php" method="post">
+						<input name="name" id="name" type="text" class="f-field" value="Name">
+						<input name="email" id="email" type="text" class="f-field" value="Email">
+						<textarea name="comments" id="comments" cols="4" rows="20" class="f-area">Message</textarea>
+						<input name="" type="submit" class="send-btn" value="Send">
+					</form>
 
-        <!-- /.navbar -->
+				</figure>
 
-      </nav>
+			</section>
 
-    </section>
+		</section>
 
-  </header>
+	</section>
 
-  <!-- banner -->
+</section>
 
-  <section id="banner" class="inner-b"> <img src="images/404_01.png" alt=""/> </section>
-
-  <!-- Content -->
-
-  <section class="content-holder1 inner-pages">
-
-    <section class="container">
-
-      <section class="help-holder">
-
-        <article class="left">
-
-          <h2> <span class="txt-left">Career</span> <span class="bg-right"></span> </h2>
-
-<section class="row-fluid">
-
-              <figure class="span3">
-
-                 <h3>All Positions</h3>
-
-              <ul class="left-col-list">
-
-                <li><a href="#">Lorem Ipsum Dolor Sit</a> </li>
-
-                <li><a href="#">Nunc Ut Pulvinar</a> </li>
-
-                <li><a href="#">Phasellus Mattis</a> </li>
-
-                <li><a href="#">Sed Rhoncus Justo</a> </li>
-
-                <li><a href="#">Aliquam Erat Volutpat</a></li>
-
-                <li><a href="#">Donec Ac Purus</a> </li>
-
-              </ul>
-
-              </figure>
-
-              <figure class="span9">
-
-                <h3>Creative Head </h3>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id augue eget mauris sollicitudin malesuada. Nulla facilisi. Nam eleifend facilisis dui at cursus. Nunc lorem sapien, auctor a vestibulum nec, viverra a orci. Vestibulum fringilla lectus et enim ultricies eu ultrices ligula scelerisque. </p>
-
-              <ul class="career-list">
-
-                <li> <strong>Date Posted</strong> <span>12/06/2012</span> </li>
-
-                <li> <strong>Job Code</strong> <span>CHGD2012</span> </li>
-
-                <li> <strong>City</strong> <span>New York</span> </li>
-
-                <li> <strong>Country</strong> <span>United States of America</span> </li>
-
-                <li> <strong>Job Type</strong> <span>Full Time</span> </li>
-
-              </ul>
-
-              <h3>Description</h3>
-
-              <p>Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. Ut adipiscing, leo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. Ut adipiscing, leo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condimentum ultrices consequat eu, vehicula ac mauris. </p>
-
-              <h3>Minimum Requirements </h3>
-
-              <ul class="services-list width-f">
-
-                <li>Vivamus euismod eleifend ipsum sit amet molestie</li>
-
-                <li>Pellentesque eget turpis ac leo vehicula consectetur</li>
-
-                <li>Fusce tortor turpis, consectetur non laoreet a</li>
-
-                <li>Vivamus euismod eleifend ipsum sit amet molestie</li>
-
-                <li>Pellentesque eget turpis ac leo vehicula consectetur</li>
-
-                <li>Fusce tortor turpis, consectetur non laoreet a</li>
-
-              </ul>
-
-              <a class="more-btn1" href="#">Apply Now</a>
-
-              </figure>
-
-            </section>
-
-        </article>
-
-      </section>
-
-    </section>
-
-  </section>
-
-  <section class="inner-f-top">
-
-    <section class="container">
-
-      <section class="top">
-
-        <section class="row-fluid">
-
-          <figure class="span3">
-
-            <h2>From The Gallery</h2>
-
-            <ul class="gallery-list">
-
-              <li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image12.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image11.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image14.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image13.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image16.jpg" alt=""/> </a> </li>
-
-              <li> <a href="#"> <img src="images/image15.jpg" alt=""/> </a> </li>
-
-            </ul>
-
-            <a href="#" class="more-btn2">+ View More</a> </figure>
-
-          <figure class="span3">
-
-            <h2>Our Team</h2>
-
-            <div class="author-img-holder"> <a href="#"> <img src="images/image17.jpg" class="author-img" alt=""/> </a> <strong class="author-name">John Orange</strong> <em>CEO</em> <span>37 years old</span> </div>
-
-            <p>Pellentesque euismod egestas massa, ac vehicula nunc tristique quis. Donec sollicitudin, diam eu vestibulum adipiimperdiet ultricies. <br>
-
-              Dignissim, ante sit amet imperdiet ultricies, felis enim luctus leo, et cursus leo libero in nisi. Donec sit amet ipsum velit, a faucibus purus.</p>
-
-          </figure>
-
-          <figure class="span3 b-post">
-
-            <h2>Latest Blog Post</h2>
-
-            <div class="f-img-holder"> <a href="#"> <img src="images/image18.jpg" class="f-blog-img" alt=""/> </a> <span class="p-date">22 <br>
-
-              May</span> </div>
-
-            <p>Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.Maecenas laoreet lectus est, eget ultricies eros. Aliquam ipsum nunc, tincidunt non fringilla.</p>
-
-            <a href="#" class="more-btn2">+ Read More</a> </figure>
-
-          <figure class="span3">
-
-            <h2>Contact Us</h2>
-
-            <form action="form.php" method="post">
-              <input name="name" id="name" type="text" class="f-field" value="Name">
-              <input name="email" id="email" type="text" class="f-field" value="Email">
-              <textarea name="comments" id="comments" cols="4" rows="20" class="f-area">Message</textarea>
-              <input name="" type="submit" class="send-btn" value="Send">
-            </form>
-
-          </figure>
-
-        </section>
-
-      </section>
-
-    </section>
-
-  </section>
-
-  <!-- footer -->
-
-  <footer id="footer">
-
-    <section class="container">
-
-      <figure class="copy-right">
-
-        <p>Copyright © 2012. All rights reserved. Designed by <a href="http://crunchpress.com/">CrunchPress.com</a></p>
-
-      </figure>
-
-      <ul class="f-icons">
-
-        <li class="fb"><a href="#">Facebook</a> </li>
-
-        <li class="flicker"><a href="#">Flicker</a> </li>
-
-        <li class="tweeter"><a href="#">Tweeter</a> </li>
-
-        <li class="skype"><a href="#">Skype</a> </li>
-
-        <li class="linkdin"><a href="#">LinkdIn</a> </li>
-
-      </ul>
-
-    </section>
-
-  </footer>
-
-</div>
-
-<div class="switcher"></div>
-
-<!-- lab -->
-
-<script type="text/javascript" src="js/jquery00.js"></script>
-
-<script src="js/modernizr.custom.17475.js"></script>
-
-<!-- clear input -->
-
-<script type="text/javascript" src="js/focus.js"></script>
-
-<!-- bootstrap -->
-
-<script type="text/javascript" src="js/bootstrap.js"></script>
-
-<!-- Cerousel -->
-
-<script type="text/javascript" src="js/jquery.elastislide.js"></script>
-
-<script type="text/javascript">
-
-$( '#carousel' ).elastislide();
-
-</script>
-
-<!-- FlexiSlider -->
-
-<script type="text/javascript" src="js/slider.js"></script>
-
-<script src="js/cockies.js"></script> <!-- jQuery cookie --> 
-
-<script src="js/styleswi.js"></script> <!-- Style Switcher --> 
-
-</body>
-
-</html>
+@stop
