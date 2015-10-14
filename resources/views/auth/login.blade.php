@@ -1,63 +1,55 @@
-@extends('app')
+@extends('layouts.login')
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+@section('contenido_body')
 
-					<form class="form-horizontal" role="form" method="POST" action="/auth/login">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+<!-- BEGIN LOGIN -->
+<div class="content">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+	<!-- BEGIN LOGIN FORM -->
+	{!! Form::open(['url' => '/auth/login', 'method' => 'POST', 'class' => 'login-form']) !!}
+		<h3 class="form-title">Iniciar sesión</h3>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+		@if (count($errors) > 0)
+	        <div class="alert alert-danger">
+	        	<button class="close" data-close="alert"></button>
+                @foreach ($errors->all() as $error)
+                    <span>{{ $error }}</span>
+                @endforeach
+	        </div>
+	    @endif
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-									Login
-								</button>
-
-								<a href="/password/email">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
+		<div class="form-group">
+			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+			<label class="control-label visible-ie8 visible-ie9">Email</label>
+			<div class="input-icon">
+				<i class="fa fa-user"></i>
+				{!! Form::email('email', null, ['class' => 'form-control placeholder-no-fix', 'placeholder' => 'Email']) !!}
 			</div>
 		</div>
-	</div>
+		<div class="form-group">
+			<label class="control-label visible-ie8 visible-ie9">Contraseña</label>
+			<div class="input-icon">
+				<i class="fa fa-lock"></i>
+				{!! Form::password('password', ['class' => 'form-control placeholder-no-fix', 'placeholder' => 'Contraseña']) !!}
+			</div>
+		</div>
+		<div class="form-actions">
+			<label class="checkbox">
+				<input type="checkbox" name="remember" value="1"/> Recordar
+			</label>
+
+			<button type="submit" class="btn green pull-right">
+				Iniciar sesión <i class="m-icon-swapright m-icon-white"></i>
+			</button>
+		</div>
+		<div class="forget-password">
+			<h4>¿Olvidaste tu contraseña?</h4>
+			<p>no te preocupes, da click <a href="{{ url('password/email') }}" id="forget-password"> aqui </a>para resetear tu contraseña.</p>
+		</div>
+	{!! Form::close() !!}
+	<!-- END LOGIN FORM -->
+
 </div>
-@endsection
+<!-- END LOGIN -->
+
+@stop

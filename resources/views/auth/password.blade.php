@@ -1,50 +1,51 @@
-@extends('app')
+@extends('layouts.login')
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
-				<div class="panel-body">
-					@if (session('status'))
-						<div class="alert alert-success">
-							{{ session('status') }}
-						</div>
-					@endif
+@section('contenido_body')
 
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+<!-- BEGIN LOGIN -->
+<div class="content">
 
-					<form class="form-horizontal" role="form" method="POST" action="/password/email">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	<!-- BEGIN LOGIN FORM -->
+	{!! Form::open(['url' => '/password/email', 'method' => 'POST', 'class' => 'login-form']) !!}
+		<h3>¿Olvidaste tu contraseña?</h3>
+		<p>Ingresa tu email para resetear tu contraseña.</p>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+		@if (session('status'))
+			<div class="alert alert-success">
+				{{ session('status') }}
+			</div>
+		@endif
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Send Password Reset Link
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
+		@if (count($errors) > 0)
+	        <div class="alert alert-danger">
+	        	<button class="close" data-close="alert"></button>
+                @foreach ($errors->all() as $error)
+                    <span>{{ $error }}</span>
+                @endforeach
+	        </div>
+	    @endif
+
+	    <div class="form-group">
+			<div class="input-icon">
+				<i class="fa fa-envelope"></i>
+				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
 			</div>
 		</div>
-	</div>
+
+		<div class="form-actions">
+			<a href="{{ url('/auth/login') }}" class="btn">
+				<i class="m-icon-swapleft"></i> Atrás
+			</a>
+			
+			<button type="submit" class="btn green pull-right">
+				Enviar <i class="m-icon-swapright m-icon-white"></i>
+			</button>
+		</div>
+		
+	{!! Form::close() !!}
+	<!-- END LOGIN FORM -->
+
 </div>
-@endsection
+<!-- END LOGIN -->
+
+@stop
