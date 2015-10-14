@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Rednecv\Events;
 
 abstract class Event {
 
