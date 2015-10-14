@@ -31,17 +31,6 @@
 <!-- Content -->
 <section class="content-holder1">
 	<section class="container">
-		<section class="help-holder">
-			<section class="top">
-				<section class="bottom">
-					<article class="left">
-						<h2>We need your Help!</h2>
-						<span class="txt-color">Your donation goes directly to our projects. No administration costs apply. </span>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,...</p>
-					</article>
-					<a href="#" class="d-btn">Donate Now</a> </section>
-			</section>
-		</section>
 		<section class="service-tabs">
 			<section class="row-fluid">
 				<figure class="span3">
@@ -65,54 +54,6 @@
 					<p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. quasi architecto beatae vitae dicta sunt explicabo.</p>
 				</figure>
 			</section>
-		</section>
-	</section>
-</section>
-
-<section id="content-holder2">
-	<section class="container">
-		<section class="row-fluid">
-			<figure class="span3">
-				<h2>Featured Stuff</h2>
-				<p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-				<a href="#" class="more-btn">+ Read More</a> </figure>
-			<figure class="span9">
-				<ul id="carousel" class="elastislide-list">
-				<li><a href="#"><img src="images/image07.jpg" alt="image01" /></a></li>
-				<li><a href="#"><img src="images/image08.jpg" alt="image02" /></a></li>
-				<li><a href="#"><img src="images/image09.jpg" alt="image03" /></a></li>
-				<li><a href="#"><img src="images/image50.jpg" alt="image04" /></a></li>
-				<li><a href="#"><img src="images/image51.jpg" alt="image05" /></a></li>
-				<li><a href="#"><img src="images/image52.jpg" alt="image06" /></a></li>
-				<li><a href="#"><img src="images/image07.jpg" alt="image07" /></a></li>
-				<li><a href="#"><img src="images/image08.jpg" alt="image08" /></a></li>
-				<li><a href="#"><img src="images/image09.jpg" alt="image09" /></a></li>
-				<li><a href="#"><img src="images/image50.jpg" alt="image10" /></a></li>
-				<li><a href="#"><img src="images/image51.jpg" alt="image11" /></a></li>
-				<li><a href="#"><img src="images/image52.jpg" alt="image12" /></a></li>
-			</ul>
-			</figure>
-		</section>
-		<section class="row-fluid">
-			<figure class="span6">
-				<h2>From Our Blog</h2>
-				<article class="h-blog"> <a href="#"><img src="images/image10.jpg" alt="" /></a><strong class="title"><a href="#">Help Protect Critical Panda Habitats</a></strong> <em class="date">Posted On 9th May 2012 ~ <a href="#">4 Comments</a></em>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry type and scrambled it to make a type specimen book.</p>
-				</article>
-				<article class="h-blog"> <a href="#"><img src="images/image49.jpg" alt="" /></a> <strong class="title"><a href="#">Help Protect Critical Panda Habitats</a></strong> <em class="date">Posted On 9th May 2012 ~ <a href="#">4 Comments</a></em>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry type and scrambled it to make a type specimen book.</p>
-				</article>
-				<a href="#" class="more-btn">+ Read More</a> </figure>
-			<figure class="span6">
-				<h2>Newsletter</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, galley of type and scrambled it to make a type specimen book.</p>
-				<section class="field-holder">
-					<input name="" type="text" class="letter-bg">
-					<input name="" type="submit" class="sub-btn" value="Subscribe">
-				</section>
-				<h2>About Us</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, galley of type and scrambled it to make a type specimen book.</p>
-				<a href="#" class="more-btn">+ Read More</a> </figure>
 		</section>
 	</section>
 </section>
