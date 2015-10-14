@@ -212,12 +212,12 @@ body {
   background-color: #fff;
 }
 a {
-  color: #649300;
+  color: #060f54;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #649300;
+  color: #060f54;
   text-decoration: underline;
 }
 .img-rounded {
@@ -770,7 +770,7 @@ abbr.initialism {
 blockquote {
   padding: 0 0 0 15px;
   margin: 0 0 18px;
-  border-left: 5px solid #649300;
+  border-left: 5px solid #060f54;
 }
 blockquote p {
   margin-bottom: 0;
@@ -2407,7 +2407,7 @@ input[type="submit"].btn.btn-mini {
 .btn-link {
   border-color: transparent;
   cursor: pointer;
-  color: #649300;
+  color: #060f54;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -3146,7 +3146,7 @@ input[type="submit"].btn.btn-mini {
 .nav-list > .active > a:hover,
 .nav-list > .active > a:focus {
   color: #fff;
-  background-color: #649300;
+  background-color: #060f54;
 }
 .nav-list [class^="icon-"],
 .nav-list [class*=" icon-"] {
@@ -3805,14 +3805,14 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-inverse .nav > li > a:focus,
 .navbar-inverse .nav > li > a:hover {
-  background-color: #649300;
+  background-color: #060f54;
   color: #fff;
 }
 .navbar-inverse .nav .active > a,
 .navbar-inverse .nav .active > a:hover,
 .navbar-inverse .nav .active > a:focus {
   color: #fff;
-  background-color: #649300;
+  background-color: #060f54;
 }
 .navbar-inverse .navbar-link {
   color: #999;
@@ -3828,7 +3828,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
-  background-color: #649300;
+  background-color: #060f54;
   color: #fff;
 }
 .navbar-inverse .nav li.dropdown > a:hover .caret,
@@ -4857,7 +4857,7 @@ a.thumbnail:focus {
 .dropdown-submenu:focus > a {
   text-decoration: none;
   color: #fff;
-  background-color: #649300;
+  background-color: #060f54;
   
 }
 .dropdown-menu > .active > a,
@@ -4866,7 +4866,7 @@ a.thumbnail:focus {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #649300;
+  background-color: #060f54;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -6224,7 +6224,7 @@ button.close {
   .navbar-inverse .nav-collapse .nav > li > a:focus,
   .navbar-inverse .nav-collapse .dropdown-menu a:hover,
   .navbar-inverse .nav-collapse .dropdown-menu a:focus {
-    background-color: #649300;
+    background-color: #060f54;
   }
   .nav-collapse.in .btn-group {
     margin-top: 5px;
