@@ -1,4 +1,4 @@
-<?php namespace App\Console\Commands;
+<?php namespace Rednecv\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

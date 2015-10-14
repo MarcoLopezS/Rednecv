@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Rednecv
+        psr4_prefix: Rednecv
         src_path: app

@@ -1,4 +1,4 @@
-<?php namespace Cms\Http\Controllers;
+<?php namespace Rednecv\Http\Controllers;
 
 class ImageController extends Controller {
 

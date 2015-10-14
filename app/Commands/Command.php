@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace Rednecv\Commands;
 
 abstract class Command {
 
