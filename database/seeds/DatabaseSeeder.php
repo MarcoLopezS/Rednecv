@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('PostOrderTableSeeder');
 		$this->call('PostTableSeeder');
 		$this->call('GalleryTableSeeder');
+		$this->call('GalleryPhotosTableSeeder');
 		$this->call('ConfigTableSeeder');
 	}
 
