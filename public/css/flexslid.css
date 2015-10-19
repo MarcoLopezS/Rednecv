@@ -21,7 +21,7 @@ body{
 .flexslider .slides{}
 .flexslider .slides > li {
 	display: none;
-	height:782px;
+	/*height:782px;*/
 } /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {
 	max-width: 100%;
