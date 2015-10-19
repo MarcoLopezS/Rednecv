@@ -150,6 +150,7 @@ return [
 		'Rednecv\Providers\ConfigServiceProvider',
 		'Rednecv\Providers\EventServiceProvider',
 		'Rednecv\Providers\RouteServiceProvider',
+		'Rednecv\Providers\ComposerServiceProvider',
 
 	],
 
