@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+
 
 Route::get('/upload/{folder}/{width}x{height}/{image}', ['as' => 'image.adaptiveResize', 'uses' => 'ImageController@adaptiveResize']);
 
@@ -19,6 +19,20 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::group(['namespace' => 'Frontend'], function() {
+
+	Route::get('/', 'FrontendController@index');
+
+	Route::group(['prefix' => 'blog'], function(){
+
+		Route::get('/', ['as' => 'frontend.blog', 'uses' => 'FrontendController@blog']);
+
+		Route::get('{id}-{url}', ['as' => 'frontend.blog.noticia', 'uses' => 'FrontendController@noticia']);
+
+	});
+
+});
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
