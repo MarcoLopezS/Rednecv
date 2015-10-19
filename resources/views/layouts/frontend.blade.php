@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Rednecv</title>
+<title>{{ $conf->titulo }}</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -29,6 +29,9 @@
 	{!! HTML::script('js/html5.js') !!}
 <![endif]-->
 <!-- jquery -->
+
+@yield('contenido_header')
+
 </head>
 
 <body>
@@ -39,7 +42,7 @@
 			<section class="container">
 
 				<h1 id="logo">
-					<a href="/">Green Peas</a>
+					<a href="/">{{ $conf->titulo }}</a>
 				</h1>
 
 				<nav id="nav">
@@ -50,11 +53,11 @@
 							<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
 							<div class="nav-collapse collapse">
 								<ul class="nav">
-									<li class="active"><a href="/">Inicio</a></li>
-									<li><a href="#">Nosotros</a></li>
-									<li><a href="#">Galería</a></li>
-									<li><a href="#">Blog</a></li>
-									<li><a href="contact.html">Contacto</a></li>
+									<li {!! (Request::is('/') ? 'class="active"' : '') !!} ><a href="/">Inicio</a></li>
+									<li {!! (Request::is('nosotros*') ? 'class="active"' : '') !!} ><a href="#">Nosotros</a></li>
+									<li {!! (Request::is('galeria*') ? 'class="active"' : '') !!} ><a href="#">Galería</a></li>
+									<li {!! (Request::is('blog*') ? 'class="active"' : '') !!} ><a href="/blog">Blog</a></li>
+									<li {!! (Request::is('contacto*') ? 'class="active"' : '') !!} ><a href="/contacto">Contacto</a></li>
 								</ul>
 							</div>
 							<!--/.nav-collapse -->
@@ -102,6 +105,8 @@
 	
 	{!! HTML::script('js/slider.js') !!} 	{{-- FlexiSlider --}}
 	{!! HTML::script('js/cockies.js') !!} 	{{-- jQuery Cookie --}}
+
+	@yield('contenido_footer')
 
 </body>
 </html>
