@@ -31,12 +31,15 @@ class FrontendController extends Controller{
 
     public function nosotros()
     {
-        return view('frontend.nosotros', compact('columnistasDia'));
+        return view('frontend.nosotros');
     }
 
-    public function contacto()
+    public function getContacto()
     {
-        return view('frontend.contacto', compact('columnistasDia'));
+        /* CATEGORIA */
+        $category = Category::where('publicar', 1)->orderBy('titulo','asc')->get();
+
+        return view('frontend.contacto', compact('category'));
     }
 
     /* BLOG - NOTICIAS */
