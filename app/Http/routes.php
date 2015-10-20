@@ -24,13 +24,21 @@ Route::group(['namespace' => 'Frontend'], function() {
 
 	Route::get('/', 'FrontendController@index');
 
-	Route::group(['prefix' => 'blog'], function(){
+	Route::get('nosotros', 'FrontendController@index');
 
-		Route::get('/', ['as' => 'frontend.blog', 'uses' => 'FrontendController@blog']);
-
-		Route::get('{id}-{url}', ['as' => 'frontend.blog.noticia', 'uses' => 'FrontendController@noticia']);
-
+	Route::group(['prefix' => 'galeria'], function(){
+		Route::get('/', ['as' => 'frontend.galeria', 'uses' => 'FrontendController@galeria']);
+		Route::get('{id}-{url}', ['as' => 'frontend.galeria.noticia', 'uses' => 'FrontendController@galeriaNoticia']);
 	});
+
+	Route::group(['prefix' => 'blog'], function(){
+		Route::get('/', ['as' => 'frontend.blog', 'uses' => 'FrontendController@blog']);
+		Route::get('{id}-{url}', ['as' => 'frontend.blog.noticia', 'uses' => 'FrontendController@noticia']);
+		Route::get('{url}', ['as' => 'frontend.blog.categoria', 'uses' => 'FrontendController@categoria']);
+	});
+
+	Route::get('contacto', ['as' => 'frontend.contacto.get', 'uses' => 'FrontendController@getContacto']);
+	Route::post('contacto', ['as' => 'frontend.contacto.post', 'uses' => 'FrontendController@postContacto']);
 
 });
 
