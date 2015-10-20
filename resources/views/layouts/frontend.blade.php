@@ -54,8 +54,8 @@
 							<div class="nav-collapse collapse">
 								<ul class="nav">
 									<li {!! (Request::is('/') ? 'class="active"' : '') !!} ><a href="/">Inicio</a></li>
-									<li {!! (Request::is('nosotros*') ? 'class="active"' : '') !!} ><a href="#">Nosotros</a></li>
-									<li {!! (Request::is('galeria*') ? 'class="active"' : '') !!} ><a href="#">Galería</a></li>
+									<li {!! (Request::is('nosotros*') ? 'class="active"' : '') !!} ><a href="/nosotros">Nosotros</a></li>
+									<li {!! (Request::is('galeria*') ? 'class="active"' : '') !!} ><a href="/galeria">Galería</a></li>
 									<li {!! (Request::is('blog*') ? 'class="active"' : '') !!} ><a href="/blog">Blog</a></li>
 									<li {!! (Request::is('contacto*') ? 'class="active"' : '') !!} ><a href="/contacto">Contacto</a></li>
 								</ul>
