@@ -1113,3 +1113,12 @@ a img:hover {
   font-size: 14px;
   line-height: 180%;
 }
+.contenido-texto {
+  float: left;
+  margin: 10px 0;
+  width: 100%;
+}
+figure.span4,
+figure.span3 {
+  margin: 5px 10px !important;
+}

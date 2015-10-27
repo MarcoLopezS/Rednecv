@@ -24,7 +24,7 @@ Route::group(['namespace' => 'Frontend'], function() {
 
 	Route::get('/', 'FrontendController@index');
 
-	Route::get('nosotros', 'FrontendController@index');
+	Route::get('nosotros', ['as' => 'frontend.nosotros', 'uses' => 'FrontendController@nosotros']);
 
 	Route::group(['prefix' => 'galeria'], function(){
 		Route::get('/', ['as' => 'frontend.galeria', 'uses' => 'FrontendController@galeria']);
