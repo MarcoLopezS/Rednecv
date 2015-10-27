@@ -83,17 +83,16 @@
 				<figure class="span3">
 					<h2>Galería de Fotos</h2>
 					<ul class="gallery-list">
-						<li> <a href="#"> <img src="images/image11.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image12.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image11.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image13.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image14.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image13.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image15.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image16.jpg" alt=""> </a> </li>
-						<li> <a href="#"> <img src="images/image15.jpg" alt=""> </a> </li>
+						
+						@foreach($fotos as $item)
+						{{--*/
+						$fotos_imagen = '/upload/'.$item->imagen_carpeta.'63x40/'.$item->imagen;
+						/*--}}
+						<li><a href="#"><img src="{{ $fotos_imagen }}" alt=""></a></li>						
+						@endforeach
+
 					</ul>
-					<a href="#" class="more-btn2">+ Ver más</a>
+					<a href="/galeria" class="more-btn2">+ Ver más</a>
 				</figure>
 
 				<figure class="span3">
@@ -114,15 +113,15 @@
 
 					<div class="f-img-holder">
 						<a href="{{ $blog_url }}">
-							<img src="{{ $blog_imagen }}" class="f-blog-img" alt="" />
+							<img src="{{ $blog_imagen }}" class="f-blog-img" alt="{{ $blog_titulo }}" />
 						</a>
 					</div>
 
-					<p><strong>{{ $blog_titulo }}</strong></p>
+					<p><strong><a href="{{ $blog_url }}" >{{ $blog_titulo }}</a></strong></p>
 
 					<p>{{ $blog_contenido }}</p>
 
-					<a href="#" class="more-btn2">+ Leer más</a>
+					<a href="{{ $blog_url }}" class="more-btn2">+ Leer más</a>
 				</figure>
 
 				<figure class="span3">
