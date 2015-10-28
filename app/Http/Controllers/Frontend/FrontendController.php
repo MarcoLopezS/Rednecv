@@ -12,6 +12,7 @@ use Rednecv\Entities\Gallery;
 use Rednecv\Entities\GalleryPhoto;
 use Rednecv\Entities\Post;
 use Rednecv\Entities\PostPhoto;
+use Rednecv\Entities\Slider;
 use Rednecv\Entities\Tag;
 
 class FrontendController extends Controller{
@@ -30,7 +31,10 @@ class FrontendController extends Controller{
         //GALERIA DE FOTOS
         $fotos = GalleryPhoto::where('publicar', 1)->orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
 
-        return view('frontend.index', compact('noticia', 'fotos'));
+        //SLIDER
+        $slider = Slider::orderBy('orden', 'asc')->get();
+
+        return view('frontend.index', compact('noticia', 'fotos', 'slider'));
     }
 
     

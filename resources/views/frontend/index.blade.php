@@ -10,33 +10,17 @@
 			<div class="flexslider">
 				<ul class="slides">
 					
+					@foreach($slider as $item)
+					{{--*/
+					$imagen = '/upload/'.$item->imagen_carpeta.'2200x900/'.$item->imagen;
+					/*--}}
 					<li class="slide-image">
 						<div class="caption">
-							<p>1 Lorem dignissim, ante sit amet imperdiet ultricies, felis sit enim luctus leo, et cursus leo libero in nisionec....</p>
+							<p>{{ $item->titulo }}</p>
 						</div>
-						<img src="upload/imagen1.jpg" class="attachment-header_image wp-post-image" alt="header4" title="header4">
+						<img src="{{ $imagen }}" class="attachment-header_image wp-post-image" alt="{{ $item->titulo }}">
 					</li>
-					
-					<li class="slide-image">
-						<div class="caption">
-							<p>2 Lorem dignissim, ante sit amet imperdiet ultricies, felis sit enim luctus leo, et cursus leo libero in nisionec....</p>
-						</div>
-						<img src="upload/imagen2.jpg" class="attachment-header_image wp-post-image" alt="header4" title="header4">
-					</li>
-					
-					<li class="slide-image">
-						<div class="caption">
-							<p>3 Lorem dignissim, ante sit amet imperdiet ultricies, felis sit enim luctus leo, et cursus leo libero in nisionec....</p>
-						</div>
-						<img src="upload/imagen3.jpg" class="attachment-header_image wp-post-image" alt="header4" title="header4">
-					</li>
-
-					<li class="slide-image">
-						<div class="caption">
-							<p>5 Lorem dignissim, ante sit amet imperdiet ultricies, felis sit enim luctus leo, et cursus leo libero in nisionec....</p>
-						</div>
-						<img src="upload/imagen4.jpg" class="attachment-header_image wp-post-image" alt="header4" title="header4">
-					</li>
+					@endforeach
 
 				</ul>
 			</div>
