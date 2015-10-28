@@ -1,14 +1,21 @@
-<?php
+<?php namespace Rednecv\Http\Controllers\Admin;
+
+use Auth;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
+use Rednecv\Http\Controllers\Controller;
 
 use Rednecv\Entities\Slider;
 use Rednecv\Repositories\SliderRepo;
 
-class AdminSlidersController extends \BaseController {
+class SlidersController extends Controller {
 
     protected $sliderRepo;
 
     public function __construct(SliderRepo $sliderRepo)
     {
+    	$this->middleware('auth');
         $this->sliderRepo = $sliderRepo;
     }
 
@@ -20,11 +27,30 @@ class AdminSlidersController extends \BaseController {
 	 */
 	public function index()
 	{
-		$sliders = $this->sliderRepo->orderBy('orden', 'asc');
+		$photos = $this->sliderRepo->orderBy('orden', 'asc');
 
-        return View::make('admin.sliders.list', compact('sliders'));
+        return view('admin.sliders.list', compact('photos'));
 
 	}
+
+	public function order(Request $request)
+    {
+        if($request->ajax())
+        {
+            $sortedval = $_POST['listPhoto'];
+            try{
+                foreach ($sortedval as $key => $sort){
+                    $sortPhoto = Slider::find($sort);
+                    $sortPhoto->orden = $key;
+                    $sortPhoto->save();
+                }
+            }
+            catch (Exception $e)
+            {
+                return 'false';
+            }
+        }
+    }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -34,7 +60,7 @@ class AdminSlidersController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('admin.sliders.upload');
+		return view('admin.sliders.upload');
 	}
 
 	/**
@@ -43,19 +69,19 @@ class AdminSlidersController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
         //CREAR CARPETA CON FECHA Y MOVER IMAGEN
-        CrearCarpeta();
-        $ruta = "upload/".FechaCarpeta();
-        $ruta_fecha = FechaCarpeta();
-        $archivo = Input::file('file');
-        $file = FileMove($archivo,$ruta);
+        $this->sliderRepo->CrearCarpeta();
+        $ruta = "upload/".$this->sliderRepo->FechaCarpeta();
+        $archivo = $request->file('file');
+        $imagen = $this->sliderRepo->FileMove($archivo, $ruta);
+        $imagen_carpeta = $this->sliderRepo->FechaCarpeta();
 
         //GUARDAR DATOS
         $photo = new Slider();
-        $photo->imagen = $file;
-        $photo->imagen_carpeta = $ruta_fecha;
+        $photo->imagen = $imagen;
+        $photo->imagen_carpeta = $imagen_carpeta;
         $photo->user_id = Auth::user()->id;
         $photo->save();
 	}
@@ -81,7 +107,9 @@ class AdminSlidersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+        $photo = Slider::whereId($id)->first();
+
+        return view('admin.sliders.edit', compact('photo'));
 	}
 
 	/**
@@ -91,9 +119,41 @@ class AdminSlidersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
+		$postPhoto = $this->sliderRepo->findOrFail($id);
 
+        $ruleImg = [
+            'imagen' => 'mimes:jpg,jpeg,png'
+        ];
+
+        //VALIDACION DE DATOS
+        $this->validate($request, $ruleImg);
+
+        //VARIABLES
+        $titulo = $request->input('titulo');
+
+        //VERIFICAR SI SUBIO IMAGEN
+        if($request->hasFile('imagen'))
+        {
+            $this->sliderRepo->CrearCarpeta();
+            $ruta = "upload/".$this->sliderRepo->FechaCarpeta();
+            $archivo = $request->file('imagen');
+            $imagen = $this->sliderRepo->FileMove($archivo, $ruta);
+            $imagen_carpeta = $this->sliderRepo->FechaCarpeta();
+        }else{
+            $imagen = $request->input('imagen_actual');
+            $imagen_carpeta = $request->input('imagen_actual_carpeta');
+        }
+
+        //GUARDAR DATOS
+        $postPhoto->titulo = $titulo;
+        $postPhoto->imagen = $imagen;
+        $postPhoto->imagen_carpeta = $imagen_carpeta;
+        $this->sliderRepo->update($postPhoto, $request->all());
+
+        //REDIRECCIONAR A PAGINA PARA VER DATOS
+        return redirect()->route('admin.slider.index');
 	}
 
 	/**
@@ -103,9 +163,21 @@ class AdminSlidersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($id, Request $request)
 	{
-		//
+		$post = $this->sliderRepo->findOrFail($id);
+        $post->delete();       
+
+        $message = 'El registro se eliminó satisfactoriamente.';
+
+        if($request->ajax())
+        {
+            return response()->json([
+                'message' => $message
+            ]);
+        }
+
+        return redirect()->route('admin.slider.index');
 	}
 
 }

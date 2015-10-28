@@ -102,6 +102,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
 	});
 
+	//SLIDER
+	Route::resource('slider', 'SlidersController');
+	Route::post('slider/order', ['as' => 'admin.slider.order', 'uses' => 'SlidersController@order' ]);
+
 	//CONFIGURACION
 	Route::get('config', ['as' => 'admin.config', 'uses' => 'ConfigsController@edit']);
 	Route::put('config', ['as' => 'admin.config.update', 'uses' => 'ConfigsController@update']);

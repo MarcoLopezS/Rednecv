@@ -155,7 +155,28 @@
 							Videos</a>
 						</li>
 					</ul>
-				</li>				
+				</li>
+
+				<li {!! (Request::is('admin/slider*') ? 'class="active open"' : '') !!}>
+					<a href="javascript:;">
+						<i class="icon-picture"></i>
+						<span class="title">Slider</span>
+						{!! (Request::is('admin/slider*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
+					</a>
+					<ul class="sub-menu">
+						<li {!! (Request::is('admin/slider/create') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.slider.create') }}">
+							<i class="icon-plus"></i>
+							Nuevo slide</a>
+						</li>
+						<li {!! (Request::is('admin/slider') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.slider.index') }}">
+							<i class="icon-list"></i>
+							Todos los slides</a>
+						</li>
+						
+					</ul>
+				</li>
 
 				<li {!! (Request::is('admin/user*') ? 'class="active open"' : '') !!}>
 					<a href="javascript:;">
@@ -182,7 +203,7 @@
 					</ul>
 				</li>
 
-				<li {!! (Request::is('admin/config') ? 'class="active open"' : '') !!}>
+				<li {!! (Request::is('admin/config*') ? 'class="active open"' : '') !!}>
 					<a href="{{ route('admin.config') }}">
 						<i class="icon-settings"></i>
 						<span class="title">Configuración</span>

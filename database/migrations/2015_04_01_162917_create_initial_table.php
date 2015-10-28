@@ -342,6 +342,24 @@ class CreateInitialTable extends Migration {
 
             $table->timestamps();
         });
+
+        Schema::create('sliders', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('titulo');
+            $table->string('slug_url');
+            $table->string('descripcion');
+            $table->string('imagen');
+            $table->string('imagen_carpeta');
+            $table->integer('orden');
+
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps(); //created_at, update_at
+            $table->softDeletes(); //deleted_at
+        });
 	}
 
 	/**
@@ -351,6 +369,7 @@ class CreateInitialTable extends Migration {
 	 */
 	public function down()
 	{
+        Schema::drop('sliders');
         Schema::drop('configurations');
         Schema::drop('gallery_photos');
         Schema::drop('galleries');
