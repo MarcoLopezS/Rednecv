@@ -18,7 +18,7 @@
 						$galeria_url = '/galeria/'.$item->id.'-'.$item->slug_url;
 						/*--}}
 
-						<figure class="span4">
+						<figure class="span4 galeria">
 							<a href="{{ $galeria_url }}" >
 								<img class="team-img f-width-img" src="{{ $galeria_imagen }}" alt=""/>
 							</a>
