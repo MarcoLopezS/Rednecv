@@ -19,25 +19,18 @@
 						<section class="row-fluid">
 							<figure class="span12">
 								<h2>Contacto</h2>
-								<form action="form.php" method="post">
-									<ul class="comm-list">
-										<li>
-											<label>Nombre</label>
-											<input name="name" id="name" type="text" class="comm-field">
-										</li>
-										<li>
-											<label>Email</label>
-											<input name="email" id="email" type="text" class="comm-field">
-										</li>
-										<li>
-											<label>Mensaje</label>
-											<textarea name="comments" id="comments" cols="4" rows="20" class="comm-area"></textarea>
-										</li>
-										<li>
-											<input name="" type="submit" class="send-btn" value="Submit">
-										</li>
-									</ul>
-								</form>
+
+								{!! Form::open(['route' => 'frontend.contacto.post', 'method' => 'POST', 'id' => 'contactForm']) !!}
+
+									<div class="contact-content text-justify"></div>
+
+									{!! Form::text('nombre', null, ['class' => 'f-field', 'id' => 'nombre', 'placeholder' => 'Nombre']) !!}
+									{!! Form::email('email', null, ['class' => 'f-field', 'id' => 'email', 'placeholder' => 'Email']) !!}
+									{!! Form::textarea('mensaje', null, ['class' => 'f-area', 'placeholder' => 'Mensaje', 'cols' => '4', 'rows' => '20']) !!}
+									<a id="formContactoSubmit" href="#" class="send-btn">Enviar mensaje</a>						
+								
+								{!! Form::close() !!}
+
 							</figure>
 						</section>
 					</figure>
@@ -58,5 +51,11 @@
 		</section>
 	</section>
 </section>
+
+@stop
+
+@section('contenido_footer')
+
+{!! HTML::script('js/contacto.js') !!}
 
 @stop

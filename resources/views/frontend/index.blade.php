@@ -72,7 +72,7 @@
 						{{--*/
 						$fotos_imagen = '/upload/'.$item->imagen_carpeta.'63x40/'.$item->imagen;
 						/*--}}
-						<li><a href="#"><img src="{{ $fotos_imagen }}" alt=""></a></li>						
+						<li><a href="/galeria"><img src="{{ $fotos_imagen }}" alt=""></a></li>						
 						@endforeach
 
 					</ul>
@@ -81,9 +81,11 @@
 
 				<figure class="span3">
 					<h2>Nuestro Equipo</h2>
-					<div class="author-img-holder"> <img src="images/image17.jpg" class="author-img" alt="" /> <strong class="author-name">John Orange</strong> <em>CEO</em> <span>37 years old</span> </div>
-					<p>Pellentesque euismod egestas massa, ac vehicula nunc tristique quis. Donec sollicitudin, diam eu vestibulum adipiimperdiet ultricies. <br>
-						Dignissim, ante sit amet imperdiet ultricies, felis enim luctus leo, et cursus leo libero in nisi. Donec sit amet ipsum velit, a faucibus purus.</p>
+					<div class="author-img-holder">
+						<img src="/imagenes/nathaly-canales.jpg" class="author-img" alt="Nathaly Canales" />
+						<strong class="author-name">Nathaly Canales</strong>
+					</div>
+					<p>Pellentesque euismod egestas massa, ac vehicula nunc tristique quis. Donec sollicitudin, diam eu vestibulum adipiimperdiet ultricies. <br> Dignissim, ante sit amet imperdiet ultricies, felis enim luctus leo, et cursus leo libero in nisi. Donec sit amet ipsum velit, a faucibus purus.</p>
 				</figure>
 
 				<figure class="span3 b-post">
@@ -91,7 +93,7 @@
 					{{--*/
 					$blog_titulo = $noticia->titulo;
 					$blog_contenido = $noticia->descripcion;
-					$blog_imagen = '/upload/'.$noticia->imagen_carpeta.'222x72/'.$noticia->imagen;
+					$blog_imagen = '/upload/'.$noticia->imagen_carpeta.'222x100/'.$noticia->imagen;
 					$blog_url = '/blog/'.$noticia->id.'-'.$noticia->slug_url;
 					/*--}}
 
@@ -110,13 +112,15 @@
 
 				<figure class="span3">
 					<h2>Contactanos</h2>
-					{!! Form::open() !!}
+					{!! Form::open(['route' => 'frontend.contacto.post', 'method' => 'POST', 'id' => 'contactForm']) !!}
 
-						{!! Form::text('name', 'Nombre', ['class' => 'f-field', 'id' => 'name']) !!}
-						{!! Form::email('email', 'Email', ['class' => 'f-field', 'id' => 'name']) !!}
-						{!! Form::textarea('comments', 'Mensaje', ['class' => 'f-area', 'cols' => '4', 'rows' => '20']) !!}
-						<input name="" type="submit" class="send-btn" value="Send">
-					
+						<div class="contact-content text-justify"></div>
+
+						{!! Form::text('nombre', null, ['class' => 'f-field', 'id' => 'nombre', 'placeholder' => 'Nombre']) !!}
+						{!! Form::email('email', null, ['class' => 'f-field', 'id' => 'email', 'placeholder' => 'Email']) !!}
+						{!! Form::textarea('mensaje', null, ['class' => 'f-area', 'placeholder' => 'Mensaje', 'cols' => '4', 'rows' => '20']) !!}
+						<a id="formContactoSubmit" href="#" class="send-btn">Enviar mensaje</a>
+
 					{!! Form::close() !!}
 				</figure>
 
@@ -124,5 +128,11 @@
 		</section>
 	</section>
 </section>
+
+@stop
+
+@section('contenido_footer')
+
+{!! HTML::script('js/contacto.js') !!}
 
 @stop

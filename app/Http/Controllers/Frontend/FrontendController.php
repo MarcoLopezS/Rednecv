@@ -39,9 +39,9 @@ class FrontendController extends Controller{
 
     
     /* NOSOTROS */
-    public function nosotros()
+    public function empresa()
     {
-        return view('frontend.nosotros');
+        return view('frontend.empresa');
     }
 
 
@@ -131,18 +131,42 @@ class FrontendController extends Controller{
 
     public function getContacto()
     {
-        /* CATEGORIA */
-        $category = Category::where('publicar', 1)->orderBy('titulo','asc')->get();
-
-        return view('frontend.contacto', compact('category'));
+        return view('frontend.contacto');
     }
 
-    public function postContacto()
+    public function postContacto(Request $request)
     {
-        /* CATEGORIA */
-        
+        $data = [
+            'nombre' => $request->input('nombre'),
+            'email' => $request->input('email'),
+            'mensaje' => $request->input('mensaje')
+        ];
 
-        return view('frontend.contacto', compact('category'));
+        $rules = [
+            'nombre' => 'required',
+            'email' => 'required|email',
+            'mensaje' => 'required'
+        ];
+
+        $this->validate($request, $rules);
+
+        $fromEmail = 'mlopez18073@gmail.com';
+        $fromNombre = 'Rednecv';
+
+        \Mail::send('emails.frontend.contacto', $data, function($message) use ($fromNombre, $fromEmail){
+            $message->to($fromEmail, $fromNombre);
+            $message->from($fromEmail, $fromNombre);
+            $message->subject('Rednecv - Contacto');
+        });
+
+        $mensaje = 'Tu mensaje ha sido enviado.';
+
+        if($request->ajax())
+        {
+            return response()->json([
+                'message' => $mensaje
+            ]);
+        }       
     }
 
 }
