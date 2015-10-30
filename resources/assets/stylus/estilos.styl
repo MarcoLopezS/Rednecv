@@ -1,26 +1,26 @@
 /* Table of Content
 ==================================================
 	#Site Styles
-		1. 	Reset Tags ( Line 1 – 8 )
-		2.	Global Properties ( Line 9 – 32 )
-		3.	Default Form Properties ( Line 33 – 63 )
-		4.	Global Structure ( Line 65-73 )
-		5.	Header Section ( Line 76 – 120 )
-		6.	General Content Styling ( Line 123 – 389 )
-		7.	Footer Content Styling ( Line 391 – 491 )
-		8.	Inner Page Styling ( Line 494 – 524 )
-		9.	404 Page Settings ( Line 526 – 534 )
-		10.	About page ( Line 538 – 562 )
-		11.	Author Page Settings ( Line 566 – 723 )
-		12.	Blog Page ( Line 727-763)
-		13.	Blog Detail Page ( Line 765 – 820 )
-		14.	Team Detail Page ( Line 825 – 843)
-		15.	Contact Page ( Line 849 – 862 )
-		16.	Career List Page ( Line 864 – 943)
-		17.	Testimonial Page ( Line 849-966)
-		18.	Drop Caps ( Line 970 – 994)
-		19.	Dividers ( Line 999 – 1043)
-		20.	Icons Dividers ( Line 1047 – 1055) */
+		1. 	Reset Tags
+		2.	Global Properties
+		3.	Default Form Properties
+		4.	Global Structure
+		5.	Header Section
+		6.	General Content Styling
+		7.	Footer Content Styling
+		8.	Inner Page Styling
+		9.	404 Page Settings
+		10.	About page
+		11.	Author Page Settings
+		12.	Blog Page
+		13.	Blog Detail Page
+		14.	Team Detail Page
+		15.	Contact Page
+		16.	Career List Page
+		17.	Testimonial Page
+		18.	Drop Caps
+		19.	Dividers
+		20.	Icons Dividers */
 		
 /* Getting the new tags to behave */
 article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video
@@ -93,14 +93,14 @@ a img:hover
 
 /* Header */
 #logo
-	background url(../imagenes/logo-nombre.jpg) no-repeat
+	background url(../imagenes/logo.png) no-repeat
 	margin 0
 	padding 0
 	text-indent -9999px
 	width 275px
 	height 80px
 	float left
-	background-size 250px
+	background-size 220px
 
 #logo a
 	display block
@@ -332,6 +332,7 @@ a img:hover
 	float left
 	border 3px solid #b8b3ae
 	margin-right 8px
+	width 100px
 
 .author-img-holder .author-name
 	color #060f54
@@ -939,9 +940,9 @@ a img:hover
 	margin 1px 0
 	font-family 'AgencyFB-Bold'
 
-.left-col-list li a:hover
+.left-col-list li a:hover, .left-col-list li.ui-tabs-active a, .left-col-list li.ui-state-active a
 	background #060f54
-	color #fff
+	color #fff !important
 	padding-left 15px
 	text-decoration none
 
@@ -1101,5 +1102,40 @@ a img:hover
 	margin 10px 0
 	width 100%
 
-figure.span4, figure.span3
+figure.galeria
 	margin 5px 10px !important
+	
+/* NOSOTROS */
+#tabs
+	
+	h2
+		margin 0 !important
+		padding 10px 0
+		color #666
+	
+	p
+		font-size 14px
+		line-height 150%
+	
+	#equipo
+		
+		.team
+			
+			.imagen
+				float left
+				font-size 16px
+				line-height 150%
+				
+				img
+					width 200px
+					margin-right 20px
+					float left
+					border 5px solid #c6c6c6
+			
+			.datos
+				float left
+				font-size 14px
+				
+				ul
+					li
+						line-height 150%

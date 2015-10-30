@@ -135,14 +135,14 @@ a img:hover {
 }
 /* Header */
 #logo {
-  background: url("../imagenes/logo-nombre.jpg") no-repeat;
+  background: url("../imagenes/logo.png") no-repeat;
   margin: 0;
   padding: 0;
   text-indent: -9999px;
   width: 275px;
   height: 80px;
   float: left;
-  background-size: 250px;
+  background-size: 220px;
 }
 #logo a {
   display: block;
@@ -372,6 +372,7 @@ a img:hover {
   float: left;
   border: 3px solid #b8b3ae;
   margin-right: 8px;
+  width: 100px;
 }
 .author-img-holder .author-name {
   color: #060f54;
@@ -966,9 +967,11 @@ a img:hover {
   margin: 1px 0;
   font-family: 'AgencyFB-Bold';
 }
-.left-col-list li a:hover {
+.left-col-list li a:hover,
+.left-col-list li.ui-tabs-active a,
+.left-col-list li.ui-state-active a {
   background: #060f54;
-  color: #fff;
+  color: #fff !important;
   padding-left: 15px;
   text-decoration: none;
 }
@@ -1118,7 +1121,34 @@ a img:hover {
   margin: 10px 0;
   width: 100%;
 }
-figure.span4,
-figure.span3 {
+figure.galeria {
   margin: 5px 10px !important;
+}
+/* NOSOTROS */
+#tabs h2 {
+  margin: 0 !important;
+  padding: 10px 0;
+  color: #666;
+}
+#tabs p {
+  font-size: 14px;
+  line-height: 150%;
+}
+#tabs #equipo .team .imagen {
+  float: left;
+  font-size: 16px;
+  line-height: 150%;
+}
+#tabs #equipo .team .imagen img {
+  width: 200px;
+  margin-right: 20px;
+  float: left;
+  border: 5px solid #c6c6c6;
+}
+#tabs #equipo .team .datos {
+  float: left;
+  font-size: 14px;
+}
+#tabs #equipo .team .datos ul li {
+  line-height: 150%;
 }

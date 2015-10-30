@@ -48,13 +48,17 @@
 				<nav id="nav">
 					<div class="navbar navbar-inverse">
 						<div class="navbar-inner">
-							<!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-							<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-							<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+							
+							<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
 							<div class="nav-collapse collapse">
 								<ul class="nav">
 									<li {!! (Request::is('/') ? 'class="active"' : '') !!} ><a href="/">Inicio</a></li>
-									<li {!! (Request::is('nosotros*') ? 'class="active"' : '') !!} ><a href="/nosotros">Nosotros</a></li>
+									<li {!! (Request::is('empresa*') ? 'class="active"' : '') !!} ><a href="/empresa">Empresa</a></li>
 									<li {!! (Request::is('galeria*') ? 'class="active"' : '') !!} ><a href="/galeria">Galería</a></li>
 									<li {!! (Request::is('blog*') ? 'class="active"' : '') !!} ><a href="/blog">Blog</a></li>
 									<li {!! (Request::is('contacto*') ? 'class="active"' : '') !!} ><a href="/contacto">Contacto</a></li>
@@ -86,7 +90,8 @@
 	</div>
 	
 	{{-- jQuery --}}
-	{!! HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') !!}
+	{!! HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js') !!}
+	{!! HTML::script('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js') !!}
 	
 	{{-- Modernizr --}}
 	{!! HTML::script('js/modernizr.custom.17475.js') !!}
