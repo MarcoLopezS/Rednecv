@@ -59,6 +59,8 @@
 								<ul class="nav">
 									<li {!! (Request::is('/') ? 'class="active"' : '') !!} ><a href="/">Inicio</a></li>
 									<li {!! (Request::is('empresa*') ? 'class="active"' : '') !!} ><a href="/empresa">Empresa</a></li>
+									<li {!! (Request::is('servicios*') ? 'class="active"' : '') !!} ><a href="/servicios">Servicios</a></li>
+									<li {!! (Request::is('virtual*') ? 'class="active"' : '') !!} ><a href="/virtual">Plataforma Virtual</a></li>
 									<li {!! (Request::is('galeria*') ? 'class="active"' : '') !!} ><a href="/galeria">Galería</a></li>
 									<li {!! (Request::is('blog*') ? 'class="active"' : '') !!} ><a href="/blog">Blog</a></li>
 									<li {!! (Request::is('contacto*') ? 'class="active"' : '') !!} ><a href="/contacto">Contacto</a></li>
