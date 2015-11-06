@@ -10,6 +10,7 @@ use Rednecv\Entities\Category;
 use Rednecv\Entities\Configuration;
 use Rednecv\Entities\Gallery;
 use Rednecv\Entities\GalleryPhoto;
+use Rednecv\Entities\HomeOption;
 use Rednecv\Entities\Post;
 use Rednecv\Entities\PostPhoto;
 use Rednecv\Entities\Slider;
@@ -34,7 +35,10 @@ class FrontendController extends Controller{
         //SLIDER
         $slider = Slider::orderBy('orden', 'asc')->get();
 
-        return view('frontend.index', compact('noticia', 'fotos', 'slider'));
+        //OPCIONES HOME
+        $optHome = HomeOption::orderBy('titulo', 'asc')->paginate(4);
+
+        return view('frontend.index', compact('noticia', 'fotos', 'slider', 'optHome'));
     }
 
     

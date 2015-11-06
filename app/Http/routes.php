@@ -46,6 +46,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
 	Route::get('/', ['as' => 'admin.home', 'uses' => 'HomeController@index']);
 
+	//HOME
+	Route::group(['prefix' => 'home'], function(){
+		Route::resource('options', 'HomeOptionsController');
+	});
+
 	//POST
 	Route::resource('post', 'PostsController');
 

@@ -23,8 +23,8 @@ class CreateInitialTable extends Migration {
 
             $table->rememberToken();
 
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('user_profiles', function(Blueprint $table)
@@ -76,8 +76,8 @@ class CreateInitialTable extends Migration {
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('categories', function(Blueprint $table)
@@ -93,8 +93,8 @@ class CreateInitialTable extends Migration {
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('post_orders', function(Blueprint $table)
@@ -134,8 +134,8 @@ class CreateInitialTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamp('published_at');
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('post_histories', function(Blueprint $table)
@@ -151,7 +151,7 @@ class CreateInitialTable extends Migration {
             $table->enum('type', ['update', 'restore', 'delete']);
             $table->text('descripcion');
 
-            $table->timestamps(); //created_at, update_at
+            $table->timestamps();
         });
 
         Schema::create('post_photos', function(Blueprint $table)
@@ -172,8 +172,8 @@ class CreateInitialTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamp('published_at');
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('pages', function (Blueprint $table) {
@@ -192,8 +192,8 @@ class CreateInitialTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamp('published_at');
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('menus', function(Blueprint $table)
@@ -207,8 +207,8 @@ class CreateInitialTable extends Migration {
             $table->integer('parent_id');
             $table->integer('orden');
 
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
         
         Schema::create('columnists', function(Blueprint $table)
@@ -260,8 +260,8 @@ class CreateInitialTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamp('published_at');
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('videos', function(Blueprint $table)
@@ -283,8 +283,8 @@ class CreateInitialTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamp('published_at');
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('galleries', function(Blueprint $table)
@@ -304,8 +304,8 @@ class CreateInitialTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamp('published_at');
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('gallery_photos', function(Blueprint $table)
@@ -325,8 +325,8 @@ class CreateInitialTable extends Migration {
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('configurations', function(Blueprint $table)
@@ -357,9 +357,22 @@ class CreateInitialTable extends Migration {
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->timestamps(); //created_at, update_at
-            $table->softDeletes(); //deleted_at
+            $table->timestamps();
+            $table->softDeletes();
         });
+
+        Schema::create('home_options', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('titulo');
+            $table->string('descripcion');
+            $table->string('imagen');
+
+            $table->timestamps();
+            $table->softDeletes();        
+        });
+
 	}
 
 	/**
@@ -369,6 +382,7 @@ class CreateInitialTable extends Migration {
 	 */
 	public function down()
 	{
+        Schema::drop('home_options');
         Schema::drop('sliders');
         Schema::drop('configurations');
         Schema::drop('gallery_photos');

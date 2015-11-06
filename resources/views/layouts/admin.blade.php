@@ -13,7 +13,7 @@
 
 {{-- ENLACE EXTERNO --}}
 {!! HTML::style('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all') !!}
-{!! HTML::style('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css') !!}
+{!! HTML::style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css') !!}
 {!! HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') !!}
 {!! HTML::style('https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css') !!}
 
@@ -105,6 +105,21 @@
 						<i class="icon-home"></i>
 						<span class="title">Dashboard</span>
 					</a>
+				</li>
+
+				<li {!! (Request::is('admin/home*') ? 'class="active open"' : '') !!}>
+					<a href="javascript:;">
+						<i class="icon-screen-desktop"></i>
+						<span class="title">Home</span>
+						{!! (Request::is('admin/home*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
+					</a>
+					<ul class="sub-menu">
+						<li {!! (Request::is('admin/home/options*') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.home.options.index') }}">
+							<i class="icon-list"></i>
+							Opciones</a>
+						</li>
+					</ul>
 				</li>
 
 				<li {!! (Request::is('admin/post*') || Request::is('admin/category*') || Request::is('admin/tag*') ? 'class="active open"' : '') !!}>

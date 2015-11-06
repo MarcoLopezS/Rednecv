@@ -34,26 +34,17 @@
 	<section class="container">
 		<section class="service-tabs">
 			<section class="row-fluid">
+
+				@foreach($optHome as $item)
 				<figure class="span3">
-					<h3>Who we are</h3>
-					<span class="s-icon"><img src="images/image03.png" alt=""></span>
-					<p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. quasi architecto beatae vitae dicta sunt explicabo.</p>
+					<h3>{{ $item->titulo }}</h3>
+					<span class="s-icon">
+						{!! $item->imagen !!}
+					</span>
+					<p>{{ $item->descripcion }}</p>
 				</figure>
-				<figure class="span3">
-					<h3>What we do</h3>
-					<span class="s-icon"><img src="images/image04.png" alt=""></span>
-					<p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. quasi architecto beatae vitae dicta sunt explicabo.</p>
-				</figure>
-				<figure class="span3">
-					<h3>Save environment</h3>
-					<span class="s-icon"><img src="images/image05.png" alt=""></span>
-					<p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. quasi architecto beatae vitae dicta sunt explicabo.</p>
-				</figure>
-				<figure class="span3">
-					<h3>ReUse Your Trash</h3>
-					<span class="s-icon"><img src="images/image06.png" alt=""></span>
-					<p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. quasi architecto beatae vitae dicta sunt explicabo.</p>
-				</figure>
+				@endforeach
+
 			</section>
 		</section>
 	</section>

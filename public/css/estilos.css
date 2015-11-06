@@ -1,26 +1,3 @@
-/* Table of Content
-==================================================
-	#Site Styles
-		1. 	Reset Tags ( Line 1 – 8 )
-		2.	Global Properties ( Line 9 – 32 )
-		3.	Default Form Properties ( Line 33 – 63 )
-		4.	Global Structure ( Line 65-73 )
-		5.	Header Section ( Line 76 – 120 )
-		6.	General Content Styling ( Line 123 – 389 )
-		7.	Footer Content Styling ( Line 391 – 491 )
-		8.	Inner Page Styling ( Line 494 – 524 )
-		9.	404 Page Settings ( Line 526 – 534 )
-		10.	About page ( Line 538 – 562 )
-		11.	Author Page Settings ( Line 566 – 723 )
-		12.	Blog Page ( Line 727-763)
-		13.	Blog Detail Page ( Line 765 – 820 )
-		14.	Team Detail Page ( Line 825 – 843)
-		15.	Contact Page ( Line 849 – 862 )
-		16.	Career List Page ( Line 864 – 943)
-		17.	Testimonial Page ( Line 849-966)
-		18.	Drop Caps ( Line 970 – 994)
-		19.	Dividers ( Line 999 – 1043)
-		20.	Icons Dividers ( Line 1047 – 1055) */
 /* Getting the new tags to behave */
 article,
 aside,
@@ -250,6 +227,10 @@ a img:hover {
   width: 48px;
   height: 53px;
   margin: 5px auto;
+}
+.s-icon .fa {
+  font-size: 50px;
+  color: #3e3d3d;
 }
 #content-holder2 {
   background: url("../images/content-bg2.jpg");
