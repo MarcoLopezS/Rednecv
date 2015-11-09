@@ -107,7 +107,7 @@
 					</a>
 				</li>
 
-				<li {!! (Request::is('admin/home*') ? 'class="active open"' : '') !!}>
+				<li {!! (Request::is('admin/home*') || Request::is('admin/slider*') ? 'class="active open"' : '') !!}>
 					<a href="javascript:;">
 						<i class="icon-screen-desktop"></i>
 						<span class="title">Home</span>
@@ -119,13 +119,39 @@
 							<i class="icon-list"></i>
 							Opciones</a>
 						</li>
+						<li {!! (Request::is('admin/slider') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.slider.index') }}">
+							<i class="icon-picture"></i>
+							Slides</a>
+						</li>
+					</ul>
+				</li>
+
+				<li {!! (Request::is('admin/service*') ? 'class="active open"' : '') !!}>
+					<a href="javascript:;">
+						<i class="icon-target"></i>
+						<span class="title">Servicios</span>
+						{!! (Request::is('admin/service*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
+					</a>
+					<ul class="sub-menu">
+						<li {!! (Request::is('admin/service') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.service.index') }}">
+							<i class="icon-list"></i>
+							Todos las servicios</a>
+						</li>
+						<li {!! (Request::is('admin/service/create') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.service.create') }}">
+							<i class="icon-note"></i>
+							Nuevo servicio</a>
+						</li>
+						</li>
 					</ul>
 				</li>
 
 				<li {!! (Request::is('admin/post*') || Request::is('admin/category*') || Request::is('admin/tag*') ? 'class="active open"' : '') !!}>
 					<a href="javascript:;">
 						<i class="icon-book-open"></i>
-						<span class="title">Noticias</span>
+						<span class="title">Blog</span>
 						{!! (Request::is('admin/post*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
 					</a>
 					<ul class="sub-menu">
@@ -169,27 +195,6 @@
 							<i class="icon-social-youtube"></i>
 							Videos</a>
 						</li>
-					</ul>
-				</li>
-
-				<li {!! (Request::is('admin/slider*') ? 'class="active open"' : '') !!}>
-					<a href="javascript:;">
-						<i class="icon-picture"></i>
-						<span class="title">Slider</span>
-						{!! (Request::is('admin/slider*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
-					</a>
-					<ul class="sub-menu">
-						<li {!! (Request::is('admin/slider/create') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.slider.create') }}">
-							<i class="icon-plus"></i>
-							Nuevo slide</a>
-						</li>
-						<li {!! (Request::is('admin/slider') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.slider.index') }}">
-							<i class="icon-list"></i>
-							Todos los slides</a>
-						</li>
-						
 					</ul>
 				</li>
 

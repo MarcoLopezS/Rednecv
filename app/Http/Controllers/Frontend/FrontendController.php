@@ -13,6 +13,7 @@ use Rednecv\Entities\GalleryPhoto;
 use Rednecv\Entities\HomeOption;
 use Rednecv\Entities\Post;
 use Rednecv\Entities\PostPhoto;
+use Rednecv\Entities\Service;
 use Rednecv\Entities\Slider;
 use Rednecv\Entities\Tag;
 
@@ -46,6 +47,19 @@ class FrontendController extends Controller{
     public function empresa()
     {
         return view('frontend.empresa');
+    }
+
+
+    /* SERVICIOS */
+    public function servicios()
+    {
+        //MENU
+        $servicioMenu = Service::orderBy('titulo', 'asc')->get();
+
+        //CONTENIDO
+        $servicioCont = Service::orderBy('titulo', 'asc')->get();
+
+        return view('frontend.servicios', compact('servicioMenu', 'servicioCont'));
     }
 
 

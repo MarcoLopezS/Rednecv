@@ -26,6 +26,8 @@ Route::group(['namespace' => 'Frontend'], function() {
 
 	Route::get('empresa', ['as' => 'frontend.empresa', 'uses' => 'FrontendController@empresa']);
 
+	Route::get('servicios', ['as' => 'frontend.servicios', 'uses' => 'FrontendController@servicios']);
+
 	Route::group(['prefix' => 'galeria'], function(){
 		Route::get('/', ['as' => 'frontend.galeria', 'uses' => 'FrontendController@galeria']);
 		Route::get('{id}-{url}', ['as' => 'frontend.galeria.noticia', 'uses' => 'FrontendController@galeriaNoticia']);
@@ -50,6 +52,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	Route::group(['prefix' => 'home'], function(){
 		Route::resource('options', 'HomeOptionsController');
 	});
+
+	//SERVICIOS
+	Route::resource('service', 'ServicesController');
+	Route::post('service/url', ['as' => 'admin.service.slugUrl', 'uses' => 'ServicesController@slugUrl']);
 
 	//POST
 	Route::resource('post', 'PostsController');

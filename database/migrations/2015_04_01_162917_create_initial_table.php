@@ -210,59 +210,6 @@ class CreateInitialTable extends Migration {
             $table->timestamps();
             $table->softDeletes();
         });
-        
-        Schema::create('columnists', function(Blueprint $table)
-        {
-        	$table->increments('id');
-        	
-            $table->string('slug_url');
-            $table->string('nombre', 100);
-            $table->string('apellidos', 100);
-            $table->text('descripcion');
-
-            $table->string('foto');
-            $table->string('imagen_portada');
-
-            $table->boolean('publicar');
-            $table->smallInteger('orden');
-
-            $table->boolean('dia_lunes');
-            $table->boolean('dia_martes');
-            $table->boolean('dia_miercoles');
-            $table->boolean('dia_jueves');
-            $table->boolean('dia_viernes');
-            $table->boolean('dia_sabado');
-            $table->boolean('dia_domingo');
-
-        	$table->timestamps();
-        	$table->softDeletes();	
-        });
-
-        Schema::create('columns', function(Blueprint $table)
-        {
-            $table->increments('id');
-
-            $table->string('titulo');
-            $table->string('slug_url');
-            $table->string('descripcion');
-            $table->text('contenido');
-            $table->string('imagen');
-            $table->string('imagen_carpeta');
-            $table->string('video');
-
-            $table->boolean('publicar')->default(false);
-            $table->integer('contador')->unsigned();
-
-            $table->integer('columnist_id')->unsigned()->nullable();
-            $table->foreign('columnist_id')->references('id')->on('columnists');
-
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
-
-            $table->timestamp('published_at');
-            $table->timestamps();
-            $table->softDeletes();
-        });
 
         Schema::create('videos', function(Blueprint $table)
         {
@@ -373,6 +320,21 @@ class CreateInitialTable extends Migration {
             $table->softDeletes();        
         });
 
+        Schema::create('services', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('titulo');
+            $table->string('slug_url');
+            $table->text('contenido');
+            
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
 	}
 
 	/**
@@ -382,14 +344,13 @@ class CreateInitialTable extends Migration {
 	 */
 	public function down()
 	{
+        Schema::drop('services');
         Schema::drop('home_options');
         Schema::drop('sliders');
         Schema::drop('configurations');
         Schema::drop('gallery_photos');
         Schema::drop('galleries');
         Schema::drop('videos');
-        Schema::drop('columns');
-        Schema::drop('columnists');
         Schema::drop('menus');
         Schema::drop('pages');
         Schema::drop('post_photos');
