@@ -8,12 +8,12 @@ class ConfigTableSeeder extends Seeder {
     {
         \DB::table('configurations')->insert([
     		'id' 			=> 1,
-            'titulo'		=> 'Administrador de Contenido',
+            'titulo'		=> 'Red de Neurociencias y Educación con Valores',
             'dominio'		=> 'http://red.dev/',
             'keywords'		=> 'administrador, cms',
-            'description'	=> 'Administrador de contenido en L5',
-            'twitter'		=> 'marostsac',
-            'facebook'		=> 'marostsac'
+            'description'	=> 'Red de Neurociencias y Educación con Valores',
+            'twitter'		=> '',
+            'facebook'		=> ''
         ]);
     }
 

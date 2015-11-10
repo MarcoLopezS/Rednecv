@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('GalleryPhotosTableSeeder');
 		$this->call('ConfigTableSeeder');
 		$this->call('SliderTableSeeder');
+		$this->call('ServiceTableSeeder');
 	}
 
 }
