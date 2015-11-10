@@ -326,10 +326,65 @@ class CreateInitialTable extends Migration {
 
             $table->string('titulo');
             $table->string('slug_url');
+            $table->text('contenido');            
+
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('companies', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('titulo');
+            $table->string('slug_url');
             $table->text('contenido');
-            
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('teams', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('titulo');
+            $table->string('slug_url');
+            $table->string('cargo');
+            $table->string('descripcion');
+            $table->text('contenido');
+            $table->string('imagen');
+            $table->string('imagen_carpeta');
+
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('clients', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('titulo');
+            $table->string('slug_url');
+            $table->string('descripcion');
+            $table->text('contenido');
+            $table->string('imagen');
+            $table->string('imagen_carpeta');
+
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('testimonies', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('titulo');
+            $table->string('slug_url');
+            $table->string('descripcion');
+            $table->text('contenido');
+            $table->string('imagen');
+            $table->string('imagen_carpeta');
 
             $table->timestamps();
             $table->softDeletes();
@@ -344,6 +399,10 @@ class CreateInitialTable extends Migration {
 	 */
 	public function down()
 	{
+        Schema::drop('testimonies');
+        Schema::drop('clients');
+        Schema::drop('teams');
+        Schema::drop('companies');
         Schema::drop('services');
         Schema::drop('home_options');
         Schema::drop('sliders');
