@@ -1,33 +1,16 @@
 <div class="right-holder">
 
-	<h3>FROM OUR GALLERY</h3>
-
-	<ul class="gallery-list side-gallery">
-
-		<li><a href="#"><img src="/images/image42.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image43.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image44.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image45.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image46.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image47.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image48.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image42.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image43.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image44.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image45.jpg" alt=""/></a></li>
-
-		<li><a href="#"><img src="/images/image46.jpg" alt=""/></a></li>
+	<h2>Galería de Fotos</h2>
+	<ul class="gallery-list">
+		
+		@foreach($fotos as $item)
+		{{--*/
+		$fotos_imagen = '/upload/'.$item->imagen_carpeta.'63x40/'.$item->imagen;
+		/*--}}
+		<li><a href="/galeria"><img src="{{ $fotos_imagen }}" alt=""></a></li>						
+		@endforeach
 
 	</ul>
+	<a href="/galeria" class="more-btn2">+ Ver más</a>
 
 </div>

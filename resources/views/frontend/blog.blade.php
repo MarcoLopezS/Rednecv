@@ -12,7 +12,7 @@
 			<article class="left">
 				<h2> <span class="txt-left">Blog</span> <span class="bg-right"></span> </h2>
 					<section class="row-fluid">
-						<figure class="span8">
+						<figure class="span8" style="margin-left:0px;">
 
 							@foreach($blog as $item)
 							{{--*/

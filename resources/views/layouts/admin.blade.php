@@ -127,6 +127,36 @@
 					</ul>
 				</li>
 
+				<li {!! (Request::is('admin/company*') ? 'class="active open"' : '') !!}>
+					<a href="javascript:;">
+						<i class="icon-globe"></i>
+						<span class="title">Empresa</span>
+						{!! (Request::is('admin/company*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
+					</a>
+					<ul class="sub-menu">
+						<li {!! (Request::is('admin/company/us*') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.company.us.edit') }}">
+							<i class="icon-diamond"></i>
+							Nosotros</a>
+						</li>
+						<li {!! (Request::is('admin/company/team*') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.company.team.index') }}">
+							<i class="icon-rocket"></i>
+							Equipo</a>
+						</li>
+						<li {!! (Request::is('admin/company/client*') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.company.client.index') }}">
+							<i class="icon-layers"></i>
+							Clientes</a>
+						</li>
+						<li {!! (Request::is('admin/company/testimony*') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.company.testimony.index') }}">
+							<i class="icon-bubbles"></i>
+							Testimonios</a>
+						</li>
+					</ul>
+				</li>
+
 				<li {!! (Request::is('admin/service*') ? 'class="active open"' : '') !!}>
 					<a href="javascript:;">
 						<i class="icon-target"></i>
@@ -143,7 +173,6 @@
 							<a href="{{ route('admin.service.create') }}">
 							<i class="icon-note"></i>
 							Nuevo servicio</a>
-						</li>
 						</li>
 					</ul>
 				</li>

@@ -1,5 +1,20 @@
 @extends('layouts.frontend')
 
+@section('contenido_header')
+{!! HTML::style('libs/fancybox/jquery.fancybox.css?v=2.1.5') !!}
+
+<style type="text/css">
+	.row-fluid .span3{
+		width: 30%;
+	}
+
+	.row-fluid .span3:first-child{
+		margin-left: 2.564102564102564%;
+	}
+</style>
+
+@stop
+
 @section('contenido_body')
 
 <!-- banner -->
@@ -14,12 +29,12 @@
 
 					@foreach($noticiaFotos as $item)
 						{{--*/
-						$galeria_imagen = '/upload/'.$item->imagen_carpeta.'520x244/'.$item->imagen;
+						$galeria_imagen = '/upload/'.$item->imagen_carpeta.$item->imagen;
+						$galeria_imagen_thumb = '/upload/'.$item->imagen_carpeta.'520x244/'.$item->imagen;
 						/*--}}
-
 						<figure class="span3">
-							<a href="#" >
-								<img class="team-img f-width-img" src="{{ $galeria_imagen }}" alt=""/>
+							<a class="fancybox" href="{{ $galeria_imagen }}" data-fancybox-group="gallery" title="{{ $item->titulo }}">
+								<img class="team-img f-width-img" src="{{ $galeria_imagen_thumb }}" alt=""/>
 							</a>
 						</figure>
 
@@ -31,4 +46,14 @@
 	</section>
 </section>
 
+@stop
+
+@section('contenido_footer')
+{!! HTML::script('libs/fancybox/jquery.fancybox.js?v=2.1.5') !!}
+<script>
+	var jFaBox = jQuery.noConflict();
+	jFaBox(document).on("ready", function(){
+		jFaBox('.fancybox').fancybox();
+	});	
+</script>
 @stop

@@ -56,27 +56,19 @@
 			<section class="row-fluid">
 
 				<figure class="span3">
-					<h2>Galería de Fotos</h2>
-					<ul class="gallery-list">
-						
-						@foreach($fotos as $item)
-						{{--*/
-						$fotos_imagen = '/upload/'.$item->imagen_carpeta.'63x40/'.$item->imagen;
-						/*--}}
-						<li><a href="/galeria"><img src="{{ $fotos_imagen }}" alt=""></a></li>						
-						@endforeach
-
-					</ul>
-					<a href="/galeria" class="more-btn2">+ Ver más</a>
+					@include('frontend.widgets.sidebar-gallery')
 				</figure>
 
 				<figure class="span3">
 					<h2>Nuestro Equipo</h2>
 					<div class="author-img-holder">
-						<img src="/imagenes/nathaly-canales.jpg" class="author-img" alt="Nathaly Canales" />
-						<strong class="author-name">Nathaly Canales</strong>
+						{{--*/
+						$team_imagen = '/upload/'.$team->imagen_carpeta.'100x100/'.$team->imagen;
+						/*--}}
+						<img src="{{ $team_imagen }}" class="author-img" alt="{{ $team->titulo }}" />
+						<strong class="author-name">{{ $team->titulo }}</strong>
 					</div>
-					<p>Pellentesque euismod egestas massa, ac vehicula nunc tristique quis. Donec sollicitudin, diam eu vestibulum adipiimperdiet ultricies. <br> Dignissim, ante sit amet imperdiet ultricies, felis enim luctus leo, et cursus leo libero in nisi. Donec sit amet ipsum velit, a faucibus purus.</p>
+					<p>{{ $team->descripcion }}</p>
 				</figure>
 
 				<figure class="span3 b-post">
@@ -84,7 +76,7 @@
 					{{--*/
 					$blog_titulo = $noticia->titulo;
 					$blog_contenido = $noticia->descripcion;
-					$blog_imagen = '/upload/'.$noticia->imagen_carpeta.'222x100/'.$noticia->imagen;
+					$blog_imagen = '/upload/'.$noticia->imagen_carpeta.'222x80/'.$noticia->imagen;
 					$blog_url = '/blog/'.$noticia->id.'-'.$noticia->slug_url;
 					/*--}}
 

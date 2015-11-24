@@ -168,12 +168,6 @@ class CompanyTeamController extends Controller {
      */
     public function destroy($id, Request $request)
     {
-        $history = new PostHistory;
-        $history->type = 'delete';
-        $history->post_id = $id;
-        $history->user_id = Auth::user()->id;
-        $history->save();
-
         $post = $this->teamRepo->findOrFail($id);
         $post->delete();       
 

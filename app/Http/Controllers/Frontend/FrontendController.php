@@ -7,6 +7,8 @@ use Illuminate\Routing\Redirector;
 use Rednecv\Http\Controllers\Controller;
 
 use Rednecv\Entities\Category;
+use Rednecv\Entities\Client;
+use Rednecv\Entities\Company;
 use Rednecv\Entities\Configuration;
 use Rednecv\Entities\Gallery;
 use Rednecv\Entities\GalleryPhoto;
@@ -16,6 +18,8 @@ use Rednecv\Entities\PostPhoto;
 use Rednecv\Entities\Service;
 use Rednecv\Entities\Slider;
 use Rednecv\Entities\Tag;
+use Rednecv\Entities\Team;
+use Rednecv\Entities\Testimony;
 
 class FrontendController extends Controller{
 
@@ -39,14 +43,29 @@ class FrontendController extends Controller{
         //OPCIONES HOME
         $optHome = HomeOption::orderBy('titulo', 'asc')->paginate(4);
 
-        return view('frontend.index', compact('noticia', 'fotos', 'slider', 'optHome'));
+        //EQUIPO
+        $team = Team::whereId(1)->first();
+
+        return view('frontend.index', compact('noticia', 'fotos', 'slider', 'optHome', 'team'));
     }
 
     
     /* NOSOTROS */
     public function empresa()
     {
-        return view('frontend.empresa');
+        //NOSOTROS
+        $nosotros = Company::where('id', 1)->first();
+
+        //EQUIPO
+        $team = Team::orderBy('titulo', 'asc')->get();
+
+        //TESTIMONIOS
+        $testimony = Testimony::orderBy('titulo', 'asc')->get();
+
+        //CLIENTES
+        $client = Client::orderBy('titulo', 'asc')->get();
+
+        return view('frontend.empresa', compact('nosotros', 'team', 'testimony', 'client'));
     }
 
 
@@ -87,13 +106,16 @@ class FrontendController extends Controller{
     /* BLOG - NOTICIAS */
     public function blog()
     {
-        /* NOTICIAS */
+        //NOTICIAS
         $blog = Post::where('publicar', 1)->orderBy('published_at','desc')->paginate(4);
 
-        /* CATEGORIA */
+        //CATEGORIA
         $category = Category::where('publicar', 1)->orderBy('titulo','asc')->get();
 
-        return view('frontend.blog', compact('blog', 'category'));
+        //GALERIA DE FOTOS
+        $fotos = GalleryPhoto::where('publicar', 1)->orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
+
+        return view('frontend.blog', compact('blog', 'category', 'fotos'));
     }
 
     public function noticia($id)
@@ -113,7 +135,10 @@ class FrontendController extends Controller{
         /* CATEGORIA */
         $category = Category::where('publicar', 1)->orderBy('titulo','asc')->get();
 
-        return view('frontend.blog-nota', compact('noticia', 'noticiaFotos', 'noticiaTags', 'category'));
+        //GALERIA DE FOTOS
+        $fotos = GalleryPhoto::where('publicar', 1)->orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
+
+        return view('frontend.blog-nota', compact('noticia', 'noticiaFotos', 'noticiaTags', 'category', 'fotos'));
     }
 
     public function noticiaPreview($id)

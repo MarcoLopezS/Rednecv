@@ -53,6 +53,23 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 		Route::resource('options', 'HomeOptionsController');
 	});
 
+	//EMPRESA
+	Route::group(['prefix' => 'company'], function(){
+		
+		//NOSOTROS
+		Route::get('us', ['as' => 'admin.company.us.edit', 'uses' => 'CompanyUsController@edit']);
+		Route::put('us', ['as' => 'admin.company.us.update', 'uses' => 'CompanyUsController@update']);
+
+		//EQUIPO
+		Route::resource('team', 'CompanyTeamController');
+
+		//CLIENTES
+		Route::resource('client', 'CompanyClientController');
+
+		//TESTIMONIOS
+		Route::resource('testimony', 'CompanyTestimonyController');
+	});
+
 	//SERVICIOS
 	Route::resource('service', 'ServicesController');
 	Route::post('service/url', ['as' => 'admin.service.slugUrl', 'uses' => 'ServicesController@slugUrl']);
