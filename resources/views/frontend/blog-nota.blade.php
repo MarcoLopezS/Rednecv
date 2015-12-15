@@ -45,7 +45,15 @@ $blog_url = $conf->dominio.'blog/'.$noticia->id.'-'.$noticia->slug_url;
 								<div>
 									<strong class="title2">{{ $noticia->titulo }}</strong>
 
-									<img src="{{ $blog_imagen }}" class="team-img" alt=""/>
+									@if($noticia->video <> "")
+
+										<iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ $noticia->video }}" frameborder="0" allowfullscreen></iframe>
+
+									@else
+
+										<img src="{{ $blog_imagen }}" class="team-img" alt=""/>
+
+									@endif
 
 									<div class="contenido">
 										{!! $noticia->contenido !!}
