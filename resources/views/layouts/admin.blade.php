@@ -158,23 +158,10 @@
 				</li>
 
 				<li {!! (Request::is('admin/service*') ? 'class="active open"' : '') !!}>
-					<a href="javascript:;">
+					<a href="{{ route('admin.service.index') }}">
 						<i class="icon-target"></i>
 						<span class="title">Servicios</span>
-						{!! (Request::is('admin/service*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
 					</a>
-					<ul class="sub-menu">
-						<li {!! (Request::is('admin/service') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.service.index') }}">
-							<i class="icon-list"></i>
-							Todos las servicios</a>
-						</li>
-						<li {!! (Request::is('admin/service/create') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.service.create') }}">
-							<i class="icon-note"></i>
-							Nuevo servicio</a>
-						</li>
-					</ul>
 				</li>
 
 				<li {!! (Request::is('admin/post*') || Request::is('admin/category*') || Request::is('admin/tag*') ? 'class="active open"' : '') !!}>
@@ -184,47 +171,24 @@
 						{!! (Request::is('admin/post*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
 					</a>
 					<ul class="sub-menu">
-						<li {!! (Request::is('admin/post') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.post.index') }}">
-							<i class="icon-list"></i>
-							Todas las noticias</a>
-						</li>
-						<li {!! (Request::is('admin/post/create') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.post.create') }}">
-							<i class="icon-note"></i>
-							Nueva noticia</a>
-						</li>
 						<li {!! (Request::is('admin/category*') ? 'class="active"' : '') !!}>
 							<a href="{{ route('admin.category.index') }}">
 							<i class="icon-layers"></i>
 							Categorías</a>
 						</li>
-						<li {!! (Request::is('admin/tag*') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.tag.index') }}">
-							<i class="icon-tag"></i>
-							Etiquetas</a>
+						<li {!! (Request::is('admin/post') ? 'class="active"' : '') !!}>
+							<a href="{{ route('admin.post.index') }}">
+							<i class="icon-list"></i>
+							Nota</a>
 						</li>
 					</ul>
 				</li>
 
 				<li {!! (Request::is('admin/gallery*') ? 'class="active open"' : '') !!}>
-					<a href="javascript:;">
+					<a href="{{ route('admin.gallery.photo.index') }}">
 						<i class="icon-camera"></i>
-						<span class="title">Galería</span>
-						{!! (Request::is('admin/gallery*') ? '<span class="arrow open"></span>' : '<span class="arrow"></span>') !!}
+						<span class="title">Galería de Fotos</span>
 					</a>
-					<ul class="sub-menu">
-						<li {!! (Request::is('admin/gallery/photo*') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.gallery.photo.index') }}">
-							<i class="icon-grid"></i>
-							Fotos</a>
-						</li>
-						<li {!! (Request::is('admin/gallery/video*') ? 'class="active"' : '') !!}>
-							<a href="{{ route('admin.gallery.video.index') }}">
-							<i class="icon-social-youtube"></i>
-							Videos</a>
-						</li>
-					</ul>
 				</li>
 
 				<li {!! (Request::is('admin/user*') ? 'class="active open"' : '') !!}>
