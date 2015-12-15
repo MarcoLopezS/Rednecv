@@ -26,7 +26,6 @@ class PostsController extends Controller {
         'contenido' => 'required',
         'imagen' => 'mimes:jpeg,jpg,png',
         'categoria' => 'required',
-        'orden' => 'required',
         'published_at' => 'required',
         'publicar' => 'required|in:1,0'
     ];
@@ -34,14 +33,12 @@ class PostsController extends Controller {
     protected $categoryRepo;
     protected $postRepo;
     protected $postHistoryRepo;
-    protected $postOrderRepo;
     protected $postPhotoRepo;
     protected $tagRepo;
 
     public function __construct(CategoryRepo $categoryRepo,
                                 PostRepo $postRepo,
                                 PostHistoryRepo $postHistoryRepo,
-                                PostOrderRepo $postOrderRepo,
                                 PostPhotoRepo $postPhotoRepo,
                                 TagRepo $tagRepo)
     {
@@ -49,7 +46,6 @@ class PostsController extends Controller {
         $this->categoryRepo = $categoryRepo;
         $this->postRepo = $postRepo;
         $this->postHistoryRepo = $postHistoryRepo;
-        $this->postOrderRepo = $postOrderRepo;
         $this->postPhotoRepo = $postPhotoRepo;
         $this->tagRepo = $tagRepo;
     }
@@ -75,10 +71,9 @@ class PostsController extends Controller {
     public function create()
     {
         $category = $this->categoryRepo->all()->lists('titulo', 'id');
-        $order = $this->postOrderRepo->all()->lists('titulo', 'id');
         $tags = $this->tagRepo->all()->lists('titulo', 'id');
         $selected = [];
-        return view('admin.post.create', compact('category', 'order', 'tags', 'selected'));
+        return view('admin.post.create', compact('category', 'tags', 'selected'));
     }
 
 
@@ -109,7 +104,6 @@ class PostsController extends Controller {
         $slug_url = $request->input('slug_url');
         $video = $request->input('video');
         $categoria = $request->input('categoria');
-        $orden = $request->input('orden');
 
         //TAGS
         $tags=$request->input('tags');
@@ -193,7 +187,6 @@ class PostsController extends Controller {
         $slug_url = $request->input('slug_url');
         $video = $request->input('video');
         $categoria = $request->input('categoria');
-        $orden = $request->input('orden');
 
         //VERIFICAR SI SUBIO IMAGEN
         if($request->hasFile('imagen'))

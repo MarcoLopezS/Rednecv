@@ -30,7 +30,6 @@ class PostTableSeeder extends Seeder {
                 'publicar' => $faker->randomElement($array = ['0','1']),
                 'tags' => '-0,0,0-',
                 'category_id' => 1,
-                'post_order_id' => 1,
                 'published_at' => $fecha." ".$hora
             ]);
         }
