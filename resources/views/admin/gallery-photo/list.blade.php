@@ -28,13 +28,6 @@
                             </a>
                         </div>
 
-                        <div class="btn-group">
-                            <a href="{{ route('admin.gallery.photo.listsDeletes') }}" class="btn red">
-                                Registros eliminados
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                        </div>
-
                     </div>
 
                     <div class="table-toolbar">

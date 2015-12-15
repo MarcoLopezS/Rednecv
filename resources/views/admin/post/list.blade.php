@@ -28,13 +28,6 @@
                             </a>
                         </div>
 
-                        <div class="btn-group">
-                            <a href="{{ route('admin.post.listsDeletes') }}" class="btn red">
-                                Registros eliminados
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                        </div>
-
                     </div>
 
                     <div class="table-toolbar">
@@ -109,11 +102,8 @@
                                             Acciones <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="@{{ route('home.noticia.preview', [$item->id, $item->slug_url]) }}" target="_blank">Ver</a></li>
                                             <li><a href="{{ route('admin.post.edit', $item->id) }}">Editar</a></li>
                                             <li><a class="btn-delete" href="#delete">Eliminar</a></li>
-                                            <li><a href="{{ route('admin.post.photosList', $item->id) }}">Galería de Fotos</a></li>
-                                            <li><a href="{{ route('admin.post.history', $item->id) }}">Historial</a></li>
                                         </ul>
                                     </div>
                                 </td>

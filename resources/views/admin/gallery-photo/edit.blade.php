@@ -71,13 +71,6 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('contenido', 'Contenido', ['class' => 'col-md-3 control-label']) !!}
-                        <div class="col-md-9">
-                            {!! Form::textarea('contenido', null, ['class' => 'form-control ckeditor_full']) !!}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         {!! Form::label('imagen_actual', 'Imagen actual', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-9">
                             @if($gallery->imagen <> "")

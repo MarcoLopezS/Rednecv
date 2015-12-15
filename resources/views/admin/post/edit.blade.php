@@ -128,20 +128,6 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('orden', 'Orden', ['class' => 'col-md-3 control-label']) !!}
-                        <div class="col-md-9">
-                            {!! Form::select('orden', ['' => 'Seleccionar'] + $order, $post->post_order_id, ['class' => 'form-control']) !!}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        {!! Form::label('tags', 'Etiquetas', ['class' => 'col-md-3 control-label']) !!}
-                        <div class="col-md-9">
-                            {!! Form::select('tags[]', $tags, $tags_select, ['class' => 'form-control selectMultiple', 'multiple']) !!}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         {!! Form::label('published_at', 'Fecha de publicación', ['class' => 'col-md-3 control-label']) !!}
                         <div class="col-md-4">
                             {!! Form::text('published_at', null, ['class' => 'form-control col-md-6 datetimepicker']) !!}
