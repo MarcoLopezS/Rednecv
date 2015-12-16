@@ -35,7 +35,7 @@ class FrontendController extends Controller{
         $noticia = Post::where('publicar', 1)->orderBy('published_at','desc')->first();
 
         //GALERIA DE FOTOS
-        $fotos = GalleryPhoto::where('publicar', 1)->orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
+        $fotos = GalleryPhoto::orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
 
         //SLIDER
         $slider = Slider::orderBy('orden', 'asc')->get();
@@ -113,7 +113,7 @@ class FrontendController extends Controller{
         $category = Category::where('publicar', 1)->orderBy('titulo','asc')->get();
 
         //GALERIA DE FOTOS
-        $fotos = GalleryPhoto::where('publicar', 1)->orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
+        $fotos = GalleryPhoto::orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
 
         return view('frontend.blog', compact('blog', 'category', 'fotos'));
     }
@@ -123,22 +123,14 @@ class FrontendController extends Controller{
         $noticia = Post::findOrFail($id);
 
         $noticiaFotos = PostPhoto::where('post_id', $id)->orderBy('orden', 'asc')->get();
-        
-        if($noticia->tags <> "-0,0,0-"){
-            $noticiaTags = explode("-0,", $noticia->tags);
-            $noticiaTags = explode(",0-", $noticiaTags[1]);
-            $noticiaTags = explode(",", $noticiaTags[0]);
-        }elseif($noticia->tags == "-0,0,0-" OR $noticia->tags == ""){
-            $noticiaTags = "";
-        }
 
         /* CATEGORIA */
         $category = Category::where('publicar', 1)->orderBy('titulo','asc')->get();
 
         //GALERIA DE FOTOS
-        $fotos = GalleryPhoto::where('publicar', 1)->orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
+        $fotos = GalleryPhoto::orderBy('orden', 'asc')->orderBy('created_at','desc')->paginate(9);
 
-        return view('frontend.blog-nota', compact('noticia', 'noticiaFotos', 'noticiaTags', 'category', 'fotos'));
+        return view('frontend.blog-nota', compact('noticia', 'noticiaFotos', 'category', 'fotos'));
     }
 
     public function noticiaPreview($id)

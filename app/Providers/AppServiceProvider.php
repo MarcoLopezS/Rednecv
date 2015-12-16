@@ -30,9 +30,7 @@ class AppServiceProvider extends ServiceProvider {
 			'Rednecv\Services\Registrar'
 		);
 
-		$this->app->bind('path.public', function() {
-			return base_path().'/public_html';
-		});
+		
 	}
 
 }
