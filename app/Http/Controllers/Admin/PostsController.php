@@ -13,7 +13,6 @@ use Rednecv\Entities\PostHistory;
 use Rednecv\Repositories\CategoryRepo;
 use Rednecv\Repositories\PostRepo;
 use Rednecv\Repositories\PostHistoryRepo;
-use Rednecv\Repositories\PostOrderRepo;
 use Rednecv\Repositories\PostPhotoRepo;
 use Rednecv\Repositories\TagRepo;
 
@@ -105,18 +104,11 @@ class PostsController extends Controller {
         $video = $request->input('video');
         $categoria = $request->input('categoria');
 
-        //TAGS
-        $tags=$request->input('tags');
-        if($tags==""){ $union_tags=0; }
-        elseif($tags<>""){ $union_tags=implode(",", $tags);}
-
         //GUARDAR DATOS
         $post = new Post($request->all());
         $post->slug_url = $slug_url;
         $post->video = $video;
         $post->category_id = $categoria;
-        $post->post_order_id = $orden;
-        $post->tags = '-0,'.$union_tags.',0-';
         $post->imagen = $imagen;
         $post->imagen_carpeta = $imagen_carpeta;
         $post->user_id = Auth::user()->id;
@@ -158,13 +150,12 @@ class PostsController extends Controller {
     {
         $post = $this->postRepo->findOrFail($id);
         $category = $this->categoryRepo->all()->lists('titulo', 'id');
-        $order = $this->postOrderRepo->all()->lists('titulo', 'id');
 
         $tags = $this->tagRepo->all()->lists('titulo', 'id');
         $tags_select = $post->tags;
         $tags_select = explode(",", $tags_select);
 
-        return view('admin.post.edit', compact('post', 'category', 'order', 'tags', 'tags_select'));
+        return view('admin.post.edit', compact('post', 'category', 'tags', 'tags_select'));
     }
 
 
@@ -201,19 +192,12 @@ class PostsController extends Controller {
             $imagen_carpeta = $request->input('imagen_actual_carpeta');
         }
 
-        //TAGS
-        $tags=$request->input('tags');
-        if($tags==""){ $union_tags=0; }
-        elseif($tags<>""){ $union_tags=implode(",", $tags);}
-
         //GUARDAR DATOS
         $post->slug_url = $slug_url;
         $post->imagen = $imagen;
         $post->imagen_carpeta = $imagen_carpeta;
         $post->video = $video;
         $post->category_id = $categoria;
-        $post->post_order_id = $orden;
-        $post->tags = '-0,'.$union_tags.',0-';        
         $this->postRepo->update($post, $request->except('imagen'));
 
         $history = new PostHistory;
