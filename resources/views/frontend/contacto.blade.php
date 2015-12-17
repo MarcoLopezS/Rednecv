@@ -17,8 +17,13 @@
 						<iframe width="100%" height="300" scrolling="no" frameborder="0" class="map-border" src="https://maps.google.com/?ie=UTF8&amp;ll=-20.234496,57.603722&amp;spn=0.093419,0.169086&amp;t=m&amp;z=13&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
 						
 						<section class="row-fluid">
-							<figure class="span12">
+							<figure  id="formContacto" class="span12">
+							
 								<h2>Contacto</h2>
+
+								<div class="progressForm">
+									<i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+								</div>
 
 								{!! Form::open(['route' => 'frontend.contacto.post', 'method' => 'POST', 'id' => 'contactForm']) !!}
 
@@ -27,6 +32,7 @@
 									{!! Form::text('nombre', null, ['class' => 'f-field', 'id' => 'nombre', 'placeholder' => 'Nombre']) !!}
 									{!! Form::email('email', null, ['class' => 'f-field', 'id' => 'email', 'placeholder' => 'Email']) !!}
 									{!! Form::textarea('mensaje', null, ['class' => 'f-area', 'placeholder' => 'Mensaje', 'cols' => '4', 'rows' => '20']) !!}
+									<div class="g-recaptcha home" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
 									<a id="formContactoSubmit" href="#" class="send-btn">Enviar mensaje</a>						
 								
 								{!! Form::close() !!}
@@ -55,6 +61,8 @@
 @stop
 
 @section('contenido_footer')
+
+{!! HTML::script('https://www.google.com/recaptcha/api.js') !!}
 
 {!! HTML::script('js/contacto.js') !!}
 

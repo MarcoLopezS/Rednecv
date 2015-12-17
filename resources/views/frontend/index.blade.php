@@ -93,8 +93,13 @@
 					<a href="{{ $blog_url }}" class="more-btn2">+ Leer más</a>
 				</figure>
 
-				<figure class="span3">
+				<figure id="formContacto" class="span3">
 					<h2>Contactanos</h2>
+
+					<div class="progressForm">
+						<i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+					</div>
+
 					{!! Form::open(['route' => 'frontend.contacto.post', 'method' => 'POST', 'id' => 'contactForm']) !!}
 
 						<div class="contact-content text-justify"></div>
@@ -102,6 +107,8 @@
 						{!! Form::text('nombre', null, ['class' => 'f-field', 'id' => 'nombre', 'placeholder' => 'Nombre']) !!}
 						{!! Form::email('email', null, ['class' => 'f-field', 'id' => 'email', 'placeholder' => 'Email']) !!}
 						{!! Form::textarea('mensaje', null, ['class' => 'f-area', 'placeholder' => 'Mensaje', 'cols' => '4', 'rows' => '20']) !!}
+						<div class="g-recaptcha home" data-sitekey="{{ env('RE_CAP_SITE') }}" style=""></div>
+
 						<a id="formContactoSubmit" href="#" class="send-btn">Enviar mensaje</a>
 
 					{!! Form::close() !!}
@@ -115,6 +122,8 @@
 @stop
 
 @section('contenido_footer')
+
+{!! HTML::script('https://www.google.com/recaptcha/api.js') !!}
 
 {!! HTML::script('js/contacto.js') !!}
 

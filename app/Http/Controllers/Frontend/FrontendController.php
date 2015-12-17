@@ -20,8 +20,11 @@ use Rednecv\Entities\Slider;
 use Rednecv\Entities\Tag;
 use Rednecv\Entities\Team;
 use Rednecv\Entities\Testimony;
+use Rednecv\Traits\CaptchaTrait;
 
 class FrontendController extends Controller{
+
+    use CaptchaTrait;
 
     public function construccion()
     {
@@ -178,12 +181,20 @@ class FrontendController extends Controller{
         ];
 
         $rules = [
-            'nombre' => 'required',
-            'email' => 'required|email',
-            'mensaje' => 'required'
+            'nombre'  => 'required',
+            'email'   => 'required|email',
+            'mensaje' => 'required',
+            'g-recaptcha-response'  => 'required'
         ];
 
         $this->validate($request, $rules);
+
+        if($this->captchaCheck() == false)
+        {
+            return redirect()->back()
+                ->withErrors(['Error de captcha'])
+                ->withInput();
+        }
 
         $fromEmail = 'mlopez18073@gmail.com';
         $fromNombre = 'Rednecv';
