@@ -14,7 +14,11 @@
 				<section class="row-fluid content-holder">
 					<figure class="span8">
 						
-						<iframe width="100%" height="300" scrolling="no" frameborder="0" class="map-border" src="https://maps.google.com/?ie=UTF8&amp;ll=-20.234496,57.603722&amp;spn=0.093419,0.169086&amp;t=m&amp;z=13&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
+						<div id="map" 
+						  	data-map-zoom="16" 
+						  	data-map-latlng="{{ $contacto->mapa }}" 
+						  	data-map-marker="imagenes/logo-map.png" 
+						  	data-map-marker-size="200*80"></div>
 						
 						<section class="row-fluid">
 							<figure  id="formContacto" class="span12">
@@ -45,9 +49,9 @@
 
 						<h2>Dirección</h2>
 						<ul class="contact-list">
-							<li class="phone">(+00) 1234 56 789</li>
-							<li class="mail"><a href="#">info@crunhpress.com</a></li>
-							<li class="address">15th Avenue, 12345, Navada, USA</li>
+							<li class="phone">{{ $contacto->telefono }}</li>
+							<li class="mail"><a href="#">{{ $contacto->email }}</a></li>
+							<li class="address">{{ $contacto->direccion }}</li>
 						</ul>
 
 					</figure>
@@ -62,7 +66,11 @@
 
 @section('contenido_footer')
 
+{{-- RECAPTCHA --}}
 {!! HTML::script('https://www.google.com/recaptcha/api.js') !!}
+
+{{-- MAPS --}}
+{!! HTML::script('http://maps.google.com/maps/api/js?sensor=false') !!}
 
 {!! HTML::script('js/contacto.js') !!}
 

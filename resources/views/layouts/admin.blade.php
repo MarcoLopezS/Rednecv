@@ -223,6 +223,20 @@
 					</a>
 				</li>
 
+				<li {!! (Request::is('admin/contacto*') ? 'class="active open"' : '') !!}>
+					<a href="{{ route('admin.contacto') }}">
+						<i class="icon-globe"></i>
+						<span class="title">Contacto</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/upload/rednecv-manual-administrador-contenido.pdf" target="_blank">
+						<i class="icon-doc"></i>
+						<span class="title">Manual</span>
+					</a>
+				</li>
+
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>

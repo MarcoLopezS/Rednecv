@@ -387,6 +387,18 @@ class CreateInitialTable extends Migration {
             $table->softDeletes();
         });
 
+        Schema::create('contactos', function(Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('mapa');
+            $table->string('telefono');
+            $table->string('email');
+            $table->string('direccion');
+
+            $table->timestamps();
+        });
+
 	}
 
 	/**
@@ -396,6 +408,7 @@ class CreateInitialTable extends Migration {
 	 */
 	public function down()
 	{
+        Schema::drop('contactos');
         Schema::drop('testimonies');
         Schema::drop('clients');
         Schema::drop('teams');
