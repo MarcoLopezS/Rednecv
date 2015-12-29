@@ -8,11 +8,6 @@ class Service extends BaseEntity{
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['titulo','slug_url','contenido','user_id'];
-
-    public function user()
-    {
-        return $this->belongsTo('Rednecv\Entities\User', 'user_id');
-    }
-
+    protected $fillable = ['titulo','slug_url','contenido'];
+    
 } 

@@ -59,8 +59,7 @@ class ServicesController extends Controller {
         $this->validate($request, $this->rules);      
 
         //GUARDAR DATOS
-        $post = new Service($request->all());
-        $post->user_id = Auth::user()->id;
+        $post = new Service($request->all());        
         $this->serviceRepo->create($post, $request->all());
 
         //MENSAJE

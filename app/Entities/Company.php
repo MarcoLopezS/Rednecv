@@ -10,4 +10,4 @@ class Company extends BaseEntity{
 
     protected $fillable = ['titulo','slug_url','contenido'];
 
-} 
+}
