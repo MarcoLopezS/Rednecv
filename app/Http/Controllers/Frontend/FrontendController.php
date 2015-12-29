@@ -10,6 +10,7 @@ use Rednecv\Entities\Category;
 use Rednecv\Entities\Client;
 use Rednecv\Entities\Company;
 use Rednecv\Entities\Configuration;
+use Rednecv\Entities\Contacto;
 use Rednecv\Entities\Gallery;
 use Rednecv\Entities\GalleryPhoto;
 use Rednecv\Entities\HomeOption;
@@ -169,7 +170,10 @@ class FrontendController extends Controller{
 
     public function getContacto()
     {
-        return view('frontend.contacto');
+        //CONTACTO
+        $contacto = Contacto::whereId(1)->first();
+
+        return view('frontend.contacto', compact('contacto'));
     }
 
     public function postContacto(Request $request)
