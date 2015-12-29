@@ -178,6 +178,9 @@ class FrontendController extends Controller{
 
     public function postContacto(Request $request)
     {
+        //CONTACTO
+        $contacto = Contacto::whereId(1)->first();
+
         $data = [
             'nombre' => $request->input('nombre'),
             'email' => $request->input('email'),
@@ -200,11 +203,13 @@ class FrontendController extends Controller{
                 ->withInput();
         }
 
-        $fromEmail = 'mlopez18073@gmail.com';
-        $fromNombre = 'Rednecv';
+        $fromEmail = $data['email'];
+        $fromNombre = $data['nombre'];
+        $toEmail = $contacto->email;
+        $toNombre = 'Rednecv';
 
-        \Mail::send('emails.frontend.contacto', $data, function($message) use ($fromNombre, $fromEmail){
-            $message->to($fromEmail, $fromNombre);
+        \Mail::send('emails.frontend.contacto', $data, function($message) use ($fromNombre, $fromEmail, $toEmail, $toNombre){
+            $message->to($toEmail, $toNombre);
             $message->from($fromEmail, $fromNombre);
             $message->subject('Rednecv - Contacto');
         });
