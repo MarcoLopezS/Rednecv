@@ -65,8 +65,11 @@
 
                     <div class="form-group">
                         {!! Form::label('email', 'Email', ['class' => 'col-md-3 control-label']) !!}
-                        <div class="col-md-9">
+                        <div class="col-md-3">
                             {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="col-md-6">
+                            <span>El email que se agregue en este campo, se utilizará para que los usuarios puedan enviar sus mensajes mediante los formularios que hay en la página.</span>
                         </div>
                     </div>
 
