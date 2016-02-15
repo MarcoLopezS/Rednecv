@@ -25,6 +25,7 @@
 		<section class="help-holder">
 			<article class="left">
 				<h2> <span class="txt-left">{{ $noticia->titulo }}</span> <span class="bg-right"></span> </h2>
+                <p class="galeria-texto">{{ $noticia->descripcion }}</p>
 				<section class="row-fluid">
 
 					@foreach($noticiaFotos as $item)
