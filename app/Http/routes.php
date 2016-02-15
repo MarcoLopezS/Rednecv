@@ -149,4 +149,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	Route::get('contacto', ['as' => 'admin.contacto', 'uses' => 'ContactoController@edit']);
 	Route::put('contacto', ['as' => 'admin.contacto.update', 'uses' => 'ContactoController@update']);
 
+    //CONTACTO - MENSAJES
+    Route::resource('contacto/mensajes', 'ContactoMensajesController', ['only' => ['index','show']]);
+
 });

@@ -399,6 +399,24 @@ class CreateInitialTable extends Migration {
             $table->timestamps();
         });
 
+        Schema::create('contacto_mensajes', function (Blueprint $table)
+        {
+            $table->increments('id');
+
+            $table->string('nombre');
+            $table->string('apellidos');
+            $table->string('email');
+            $table->string('telefono');
+            $table->boolean('telefono_whatsapp');
+            $table->text('mensaje');
+            $table->boolean('leido');
+
+            $table->integer('user_id')->nullable()->default(NULL);
+
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
 	}
 
 	/**
