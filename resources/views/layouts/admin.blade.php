@@ -62,7 +62,7 @@
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="extra_profile.html"><i class="icon-user"></i> Mi Perfil </a></li>
+						<li><a href="{{ route('admin.user.profile') }}"><i class="icon-user"></i> Mi Perfil </a></li>
 						<li class="divider"></li>
 						<li><a href="{{ url('/auth/logout') }}"><i class="icon-key"></i> Cerrar sesión </a></li>
 					</ul>
@@ -209,7 +209,7 @@
 							Nuevo usuario</a>
 						</li>
 						<li {!! (Request::is('admin/user-profile') ? 'class="active"' : '') !!}>
-							<a href="admin">
+							<a href="{{ route('admin.user.profile') }}">
 							<i class="icon-emoticon-smile"></i>
 							Mi Perfil</a>
 						</li>

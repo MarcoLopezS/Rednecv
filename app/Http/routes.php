@@ -141,6 +141,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	//USUARIOS
 	Route::resource('user', 'UsersController');
 	Route::post('user/{user}/password', ['as' => 'admin.user.updatePassword', 'uses' => 'UsersController@updatePassword']);
+	Route::get('user-profile', ['as' => 'admin.user.profile', 'uses' => 'UsersController@profile']);
+	Route::post('user-profile', ['as' => 'admin.user.profileData', 'uses' => 'UsersController@profileData']);
+	Route::post('user-profile-password', ['as' => 'admin.user.profilePassword', 'uses' => 'UsersController@profilePassword']);
 
 	//CONTACTO
 	Route::get('contacto', ['as' => 'admin.contacto', 'uses' => 'ContactoController@edit']);
