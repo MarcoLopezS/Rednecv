@@ -1083,7 +1083,43 @@ a img:hover
 	width 100%
 
 figure.galeria
-	margin 5px 10px !important
+	position relative
+	margin 0.8% !important
+
+	a
+		color #ffffff
+
+		img
+			margin 0
+
+	.info
+		position absolute
+		left 0
+		top 0
+		height 65%
+		background rgba(0,0,0,0.5)
+		text-align center
+		opacity 0
+		padding 10%
+		width 80%
+
+		h3, p
+			color #ffffff
+
+	&:hover
+
+		.info
+			opacity 1
+			-moz-transition all 0.15s ease-out
+			-o-transition all 0.15s ease-out
+			-webkit-transition all 0.15s ease-out
+			transition all 0.15s ease-out
+			-ms-transition all 0.15s ease-out
+
+.galeria-texto
+	font-size 18px
+	line-height 150%
+
 	
 /* NOSOTROS */
 #tabs
