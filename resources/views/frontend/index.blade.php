@@ -1,5 +1,15 @@
 @extends('layouts.frontend')
 
+@section('contenido_header')
+	<meta property="og:title" content='{{ $conf->titulo  }}'>
+	<meta property="og:type" content='website' >
+	<meta property="og:url" content='{{ $conf->dominio }}' >
+	<meta property="og:image" content='{{ $conf->dominio.'imagenes/logo.png' }}' >
+	<meta property="og:site_name" content='{{ $conf->titulo }}' >
+	<meta property="fb:admins" content='1434798696787255'>
+	<meta property="og:description" content='{{ $conf->description }}'>
+@stop
+
 @section('contenido_body')
 
 <!-- banner -->
@@ -64,15 +74,20 @@
 					<div class="author-img-holder">
 						{{--*/
 						$team_imagen = '/upload/'.$team->imagen_carpeta.'100x100/'.$team->imagen;
+						$team_url = route('frontend.empresa');
 						/*--}}
-						<img src="{{ $team_imagen }}" class="author-img" alt="{{ $team->titulo }}" />
-						<strong class="author-name">{{ $team->titulo }}</strong>
+						<a href="{{ $team_url }}">
+							<img src="{{ $team_imagen }}" class="author-img" alt="{{ $team->titulo }}" />
+						</a>
+						<a href="{{ $team_url }}">
+							<strong class="author-name">{{ $team->titulo }}</strong>
+						</a>
 					</div>
 					<p>{{ $team->descripcion }}</p>
 				</figure>
 
 				<figure class="span3 b-post">
-					<h2>Blog</h2>
+					<h2><a href="{{ route('frontend.blog') }}">Blog</a></h2>
 					{{--*/
 					$blog_titulo = $noticia->titulo;
 					$blog_contenido = $noticia->descripcion;
