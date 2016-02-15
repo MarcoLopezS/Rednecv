@@ -5,7 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<meta name="description" content="Place your description here">
+	<meta name="description" content="{{ $conf->description }}" />
+	<meta name="keywords" content="{{ $conf->keywords }}">
 
 {{-- Estilos --}}
 {!! HTML::style('css/estilos.css') !!}
@@ -60,7 +61,6 @@
 									<li {!! (Request::is('/') ? 'class="active"' : '') !!} ><a href="/">Inicio</a></li>
 									<li {!! (Request::is('empresa*') ? 'class="active"' : '') !!} ><a href="/empresa">Empresa</a></li>
 									<li {!! (Request::is('servicios*') ? 'class="active"' : '') !!} ><a href="/servicios">Servicios</a></li>
-									<li {!! (Request::is('virtual*') ? 'class="active"' : '') !!} ><a href="#">Plataforma Virtual</a></li>
 									<li {!! (Request::is('galeria*') ? 'class="active"' : '') !!} ><a href="/galeria">Galería</a></li>
 									<li {!! (Request::is('blog*') ? 'class="active"' : '') !!} ><a href="/blog">Blog</a></li>
 									<li {!! (Request::is('contacto*') ? 'class="active"' : '') !!} ><a href="/contacto">Contacto</a></li>
