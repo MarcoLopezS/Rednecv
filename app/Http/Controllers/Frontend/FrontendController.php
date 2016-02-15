@@ -11,6 +11,7 @@ use Rednecv\Entities\Client;
 use Rednecv\Entities\Company;
 use Rednecv\Entities\Configuration;
 use Rednecv\Entities\Contacto;
+use Rednecv\Entities\ContactoMensaje;
 use Rednecv\Entities\Gallery;
 use Rednecv\Entities\GalleryPhoto;
 use Rednecv\Entities\HomeOption;
@@ -202,6 +203,10 @@ class FrontendController extends Controller{
                 ->withErrors(['Error de captcha'])
                 ->withInput();
         }
+
+        //GUARDAR EN BD
+        $contMensaje = new ContactoMensaje($request->all());
+        $contMensaje->save();
 
         $fromEmail = $data['email'];
         $fromNombre = $data['nombre'];
