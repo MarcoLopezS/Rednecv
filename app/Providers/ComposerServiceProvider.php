@@ -12,7 +12,7 @@ class ComposerServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		View::composer(['layouts.frontend', 'frontend.blog-nota'], 'Rednecv\Http\ViewComposers\ProfileComposer');
+		View::composer(['layouts.frontend', 'frontend.blog-nota', 'frontend.index'], 'Rednecv\Http\ViewComposers\ProfileComposer');
 	}
 
 	/**
