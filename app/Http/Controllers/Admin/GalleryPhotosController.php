@@ -172,7 +172,10 @@ class GalleryPhotosController extends Controller {
     public function destroy($id, Request $request)
     {
         $post = $this->galleryRepo->findOrFail($id);
-        $post->delete();       
+        $post->delete();
+
+        $fotos = $this->galleryPhotoRepo->where('gallery_id', $id);
+        $fotos->delete();
 
         $message = 'El registro se eliminó satisfactoriamente.';
 
