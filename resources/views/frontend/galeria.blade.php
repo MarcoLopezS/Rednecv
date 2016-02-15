@@ -14,7 +14,9 @@
 
 					@foreach($galeria as $item)
 						{{--*/
-						$galeria_imagen = '/upload/'.$item->imagen_carpeta.'520x244/'.$item->imagen;
+						$galeria_titulo = $item->titulo;
+						$galeria_descripcion = $item->descripcion;
+						$galeria_imagen = '/upload/'.$item->imagen_carpeta.'520x300/'.$item->imagen;
 						$galeria_url = '/galeria/'.$item->id.'-'.$item->slug_url;
 						/*--}}
 
@@ -22,7 +24,12 @@
 							<a href="{{ $galeria_url }}" >
 								<img class="team-img f-width-img" src="{{ $galeria_imagen }}" alt=""/>
 							</a>
+                            <div class="info">
+                                <h3><a href="{{ $galeria_url }}" >{{ $galeria_titulo }}</a></h3>
+                                <p><a href="{{ $galeria_url }}" >{{ $galeria_descripcion }}</a></p>
+                            </div>
 						</figure>
+
 
 					@endforeach
 
