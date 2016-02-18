@@ -70,7 +70,7 @@
 				</figure>
 
 				<figure class="span3">
-					<h2>Nuestro Equipo</h2>
+					<h2><a href="/empresa">Nuestro Equipo</a></h2>
 					<div class="author-img-holder">
 						{{--*/
 						$team_imagen = '/upload/'.$team->imagen_carpeta.'100x100/'.$team->imagen;
@@ -106,6 +106,9 @@
 					<p>{{ $blog_contenido }}</p>
 
 					<a href="{{ $blog_url }}" class="more-btn2">+ Leer más</a>
+
+                    <a href="/blog" class="send-btn blog-bottom-home">Ver todas las noticias</a>
+
 				</figure>
 
 				<figure id="formContacto" class="span3">
