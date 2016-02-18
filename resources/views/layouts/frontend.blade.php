@@ -43,7 +43,7 @@
 			<section class="container">
 
 				<h1 id="logo">
-					<a href="/">{{ $conf->titulo }}</a>
+					<a href="/" title="Neurociencias aplicadas a la educación en Salamanca">Neurociencias aplicadas a la educación en Salamanca</a>
 				</h1>
 
 				<nav id="nav">
