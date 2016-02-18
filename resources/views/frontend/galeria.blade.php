@@ -34,6 +34,10 @@
 					@endforeach
 
 				</section>
+
+                <section class="row-fluid">
+                    {!! $galeria->appends(Request::all())->render() !!}
+                </section>
 			</article>
 		</section>
 	</section>
