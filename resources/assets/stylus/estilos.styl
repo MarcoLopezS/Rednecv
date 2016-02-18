@@ -489,18 +489,16 @@ a img:hover
 
 .inner-pages h2
 	overflow hidden
-	position relative
 	line-height 40px
 	margin 0 0 30px !important
 	padding 0 0 6px
+	background url("../images/content-bg1.jpg") repeat
 
 .inner-pages h2 .txt-left
 	background url("../images/content-bg1.jpg") repeat
-	float left
 	left 0
 	line-height 32px
 	padding-right 13px
-	position absolute
 	top 0
 
 .inner-pages h2 .bg-right
@@ -1099,7 +1097,6 @@ figure.galeria
 		height 65%
 		background rgba(0,0,0,0.5)
 		text-align center
-		opacity 0
 		padding 10%
 		width 80%
 
@@ -1287,3 +1284,23 @@ figure.galeria
 	text-align center
 	padding 10px 0
 	margin 15px 0 0 25px
+
+
+@media (max-width: 767px)
+
+	.row-fluid
+
+		.span3
+
+			width 100% !important
+
+	figure.galeria
+		margin 5px !important
+
+		img
+			width 100% !important
+
+		.info
+
+			p
+				display none
